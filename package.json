@@ -1,0 +1,44 @@
+{
+  "name": "nuxt-starter",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "format": "prettier --write .",
+    "generate": "nuxt generate",
+    "lint": "eslint .",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "prepare": "husky"
+  },
+  "dependencies": {
+    "@nuxt/fonts": "^0.12.1",
+    "@tailwindcss/vite": "^4.3.1",
+    "nuxt": "^4.4.8",
+    "tailwindcss": "^4.3.1",
+    "vue": "^3.5.38",
+    "vue-router": "^5.1.0"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "^1.16.0",
+    "@types/node": "^24.13.2",
+    "eslint": "^10.5.0",
+    "husky": "^9.1.7",
+    "nano-staged": "^1.0.2",
+    "prettier": "^3.8.4",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.5"
+  },
+  "nano-staged": {
+    "*.{js,mjs,jsx,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{json,css,md}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@11.8.0"
+}

@@ -1,0 +1,41 @@
+@import "tailwindcss";
+@import "./_typography.css";
+@import "./_reset.css";
+@import "./_animation.css";
+
+@theme {
+  /* Colors */
+  --color-background: #ffffff;
+  --color-foreground: black;
+
+  /* Fonts */
+  --font-primary: sans-serif;
+
+  /* Animation */
+  --ease-default: cubic-bezier(0.516, 0.005, 0.198, 0.843);
+
+  /* Spacing */
+  --spacing-vertical: 50px;
+  --spacing-vertical-lg: 100px;
+  --spacing-side: 50px;
+  --spacing-side-mobile: 25px;
+  --spacing-max-width: 1500px;
+}
+
+@layer base {
+  body {
+    font-size: 100%;
+    font-family: var(--font-primary);
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+  }
+
+  button:not(:disabled),
+  a:not(:disabled) {
+    cursor: pointer;
+  }
+
+  *:focus-visible {
+    @apply outline-foreground outline-2 outline-offset-2 transition-none;
+  }
+}
