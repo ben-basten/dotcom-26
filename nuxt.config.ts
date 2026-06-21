@@ -2,7 +2,7 @@ import tailwindcss from "@tailwindcss/vite";
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  modules: ["@nuxt/fonts", "@nuxt/eslint"],
+  modules: ["@nuxt/fonts", "@nuxt/eslint", "@nuxt/content", "@nuxtjs/sitemap"],
   components: [
     {
       path: "~/components",
@@ -17,5 +17,12 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   devtools: { enabled: true },
-  compatibilityDate: "2025-07-15",
+  site: {
+    name: "Ben Basten",
+    url: process.env.DEPLOY_PRIME_URL,
+  },
+  sitemap: {
+    zeroRuntime: true,
+  },
+  compatibilityDate: "2026-06-21",
 });
