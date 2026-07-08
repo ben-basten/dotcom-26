@@ -1,75 +1,55 @@
-# Nuxt Minimal Starter
+# dotcom-26
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+An Astro-based personal site with Markdown content collections for blog posts and work entries.
 
 ## Setup
 
-Make sure to install dependencies:
+Install dependencies:
 
 ```bash
-# npm
-npm install
-
-# pnpm
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+## Development
 
-Start the development server on `http://localhost:3000`:
+Start the local dev server:
 
 ```bash
-# npm
-npm run dev
-
-# pnpm
 pnpm dev
+```
 
-# yarn
-yarn dev
+## Checks
 
-# bun
-bun run dev
+Run type checking:
+
+```bash
+pnpm typecheck
+```
+
+Run linting:
+
+```bash
+pnpm lint
 ```
 
 ## Production
 
-Build the application for production:
+Build the site:
 
 ```bash
-# npm
-npm run build
-
-# pnpm
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+Preview the production build:
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
 pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Content
+
+Blog posts live in `content/posts/`.
+
+Work entries live in `content/work/`.
+
+Collections are defined in `src/content.config.ts`.

@@ -1,9 +1,7 @@
-# Nuxt dev/build outputs
+# dev/build outputs
 .output
 .data
-.nuxt
-.nitro
-.cache
+.astro
 dist
 
 # Node dependencies

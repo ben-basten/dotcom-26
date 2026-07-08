@@ -1,0 +1,28 @@
+---
+interface Props {
+  as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
+  variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+}
+
+const { as, variant } = Astro.props as Props;
+
+const headingVariant = variant ?? as;
+
+const variantClassMap: Record<Props["as"], string> = {
+  h1: "type-h1",
+  h2: "type-h2",
+  h3: "type-h3",
+  h4: "type-h4",
+  h5: "type-h4",
+  h6: "type-h4",
+  p: "type-body",
+};
+
+const variantClasses = variantClassMap[headingVariant];
+
+const Tag = as;
+---
+
+<Tag class={variantClasses}>
+  <slot />
+</Tag>

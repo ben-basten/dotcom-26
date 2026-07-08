@@ -1,0 +1,44 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "./BaseLayout.astro";
+import ContentContainer from "../components/base/ContentContainer.astro";
+import Heading from "../components/base/Heading.astro";
+
+interface Props {
+  work: CollectionEntry<"work">;
+}
+
+const { work } = Astro.props as Props;
+---
+
+<BaseLayout title={work.data.title} description={work.data.summary}>
+  <ContentContainer as="section">
+    <article class="py-12 space-y-6">
+      <header class="space-y-2">
+        <Heading as="h1">{work.data.title}</Heading>
+        <p class="type-body text-sm text-black/70">
+          <time datetime={work.data.published.toISOString()}>
+            {
+              work.data.published.toLocaleDateString("en-US", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
+              })
+            }
+          </time>
+        </p>
+        <p class="type-body">{work.data.summary}</p>
+        {
+          work.data.stack.length > 0 && (
+            <p class="type-body text-sm text-black/70">
+              {work.data.stack.join(", ")}
+            </p>
+          )
+        }
+      </header>
+      <div class="space-y-4">
+        <slot />
+      </div>
+    </article>
+  </ContentContainer>
+</BaseLayout>

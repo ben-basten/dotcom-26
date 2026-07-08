@@ -1,6 +1,6 @@
 # dotcom-26
 
-A blog page built in Nuxt, using Nuxt Content as a git-based CMS.
+A blog page built in Astro, using static markdown as a git-based CMS.
 
 ## Command line
 
