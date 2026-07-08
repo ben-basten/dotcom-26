@@ -6,7 +6,7 @@ const posts = defineCollection({
   type: "content_layer",
   loader: glob({
     base: "./content/posts",
-    pattern: "**/*.md",
+    pattern: "**/*.{md,mdx}",
   }),
   schema: z.object({
     title: z.string(),
@@ -25,7 +25,7 @@ const work = defineCollection({
   type: "content_layer",
   loader: glob({
     base: "./content/work",
-    pattern: "**/*.md",
+    pattern: "**/*.{md,mdx}",
   }),
   schema: z.object({
     title: z.string(),
