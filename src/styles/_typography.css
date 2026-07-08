@@ -17,3 +17,20 @@
 @utility type-body {
   @apply text-base font-normal;
 }
+
+@layer base {
+  h1 {
+    @apply type-h1;
+  }
+  h2 {
+    @apply type-h2;
+  }
+  h3 {
+    @apply type-h3;
+  }
+  h4,
+  h5,
+  h6 {
+    @apply type-h4;
+  }
+}
