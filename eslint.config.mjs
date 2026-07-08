@@ -1,8 +1,16 @@
-// @ts-check
-import withNuxt from "./.nuxt/eslint.config.mjs";
+import eslintPluginAstro from "eslint-plugin-astro";
+import js from "@eslint/js";
 
-export default withNuxt({
-  rules: {
-    "vue/require-default-prop": "off",
+export default [
+  {
+    ignores: [".astro"],
   },
-});
+  // add more generic rule sets here, such as:
+  js.configs.recommended,
+  ...eslintPluginAstro.configs.recommended,
+  {
+    rules: {
+      // override/add rules settings here
+    },
+  },
+];
