@@ -1,31 +1,16 @@
-// @ts-check
-// @ts-nocheck
+import eslintPluginAstro from "eslint-plugin-astro";
 import js from "@eslint/js";
-import astro from "eslint-plugin-astro";
-import tseslint from "typescript-eslint";
 
-export default tseslint.config(
+export default [
   {
-    ignores: [".astro/**", "dist/**"],
+    ignores: [".astro"],
   },
+  // add more generic rule sets here, such as:
   js.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...astro.configs["flat/recommended"],
-  {
-    files: ["**/*.{ts,tsx,js,mjs}"],
-    rules: {
-      "no-undef": "off",
-    },
-  },
-  {
-    files: ["eslint.config.mjs"],
-    rules: {
-      "@typescript-eslint/ban-ts-comment": "off",
-    },
-  },
+  ...eslintPluginAstro.configs.recommended,
   {
     rules: {
-      "astro/no-set-html-directive": "off",
+      // override/add rules settings here
     },
   },
-);
+];
