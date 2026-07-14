@@ -2,7 +2,6 @@
 title: "Building Frontend with Right-to-Left Support"
 date: 2026-07-07T20:02:13-04:00
 tags: ["frontend"]
-draft: false
 ---
 
 Supporting right-to-left (RTL) languages such as Arabic requires intentional development to guarantee a consistent and equitable browsing experience regardless of the language a user speaks. Web standards and Tailwind tooling are here to help!<!--more-->

@@ -1,9 +1,7 @@
 ---
 title: "Getting Started With Home Assistant"
 date: 2022-11-15T18:20:36-05:00
-readTime: 10
 tags: ["home-assistant", "raspberry-pi"]
-draft: false
 ---
 
 I have been spending some time learning more about cybersecurity, and the more I learn the more I become suspicious of the internet connected devices that I use on a daily basis. For example, I'm a daily user of WiFi smart plugs. I love being able to remotely schedule my lights to turn on and off, or simply just turn on all of the living room lights without having to individually toggle all of the lamps. But are they secure?

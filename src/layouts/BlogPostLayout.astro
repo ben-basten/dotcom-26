@@ -26,10 +26,6 @@ const { post } = Astro.props;
               })
             }
           </time>
-          {
-            typeof post.data.readTime === "number" &&
-              ` · ${post.data.readTime} min read`
-          }
         </p>
         {
           post.data.tags.length > 0 && (

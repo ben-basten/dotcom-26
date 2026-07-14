@@ -11,12 +11,7 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
-    readTime: z.preprocess(
-      (value) => (typeof value === "number" ? value : undefined),
-      z.number().optional(),
-    ),
     tags: z.array(z.string()).default([]),
-    draft: z.boolean().default(false),
     description: z.string().optional(),
   }),
 });
@@ -32,7 +27,6 @@ const work = defineCollection({
     published: z.coerce.date(),
     summary: z.string(),
     stack: z.array(z.string()).default([]),
-    draft: z.boolean().default(false),
     repoUrl: z.url().optional(),
     demoUrl: z.url().optional(),
   }),

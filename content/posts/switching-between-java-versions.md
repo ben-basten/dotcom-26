@@ -1,9 +1,7 @@
 ---
 title: "Switching Between Java Versions"
 date: 2022-02-16T21:47:54-05:00
-readTime: 5
 tags: ["java", "tutorial", "jdk"]
-draft: false
 ---
 
 Problem: How do I quickly change between Java versions in the terminal?<!--more-->

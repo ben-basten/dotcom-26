@@ -4,7 +4,7 @@ import ContentContainer from "../../components/base/ContentContainer.astro";
 import Heading from "../../components/base/Heading.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const posts = await getCollection("posts", ({ data }) => !data.draft);
+const posts = await getCollection("posts");
 ---
 
 <BaseLayout title="Posts">

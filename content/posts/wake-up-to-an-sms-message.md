@@ -1,9 +1,7 @@
 ---
 title: "Wake Up to an SMS Message"
 date: 2024-02-18T20:05:35-05:00
-readTime:
 tags: ["home-assistant", "tutorial"]
-draft: false
 ---
 
 **Problem statement:**

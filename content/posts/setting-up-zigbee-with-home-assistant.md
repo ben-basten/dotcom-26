@@ -1,9 +1,7 @@
 ---
 title: "Setting Up Zigbee With Home Assistant"
 date: 2022-11-22T22:01:08-05:00
-readTime:
 tags: ["home-assistant", "zigbee"]
-draft: false
 ---
 
 Now that my Home Assistant server is set up, it's time to start adding device integrations! But... there's some choices to make before diving into this and buying new smart devices. Let's break those down!<!--more-->

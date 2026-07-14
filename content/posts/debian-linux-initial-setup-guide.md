@@ -1,9 +1,7 @@
 ---
 title: "Debian Linux Initial Setup Guide"
 date: 2023-11-12T16:48:29-05:00
-readTime:
 tags: ["linux"]
-draft: false
 ---
 
 Whenever I buy a computer or have to re-install the operating system, I find myself gravitating towards Debian-based Linux distributions for the operating system. In the recent past, this has included Ubuntu, Raspberry Pi OS, and Pop!\_OS. I have to run through very similar initial steps to get started with all of these, so it's about time to document them! <!--more-->

@@ -1,9 +1,7 @@
 ---
 title: "How to Host Home Assistant in a TrueNAS Scale VM"
 date: 2024-10-14T19:10:49-04:00
-readTime:
 tags: ["home-assistant", "truenas-scale", "tutorial"]
-draft: false
 ---
 
 **Objective:** migrate an existing Home Assistant Container installation to Home Assistant OS using a virtual machine on a TrueNAS Scale host. <!--more-->

@@ -4,7 +4,7 @@ import ContentContainer from "../../components/base/ContentContainer.astro";
 import Heading from "../../components/base/Heading.astro";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
-const workEntries = await getCollection("work", ({ data }) => !data.draft);
+const workEntries = await getCollection("work");
 ---
 
 <BaseLayout title="Work">

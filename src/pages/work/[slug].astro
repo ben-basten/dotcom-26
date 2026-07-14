@@ -3,7 +3,7 @@ import { getCollection, render } from "astro:content";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 
 export async function getStaticPaths() {
-  const workEntries = await getCollection("work", ({ data }) => !data.draft);
+  const workEntries = await getCollection("work");
 
   return workEntries.map((work) => ({
     params: { slug: work.id },
