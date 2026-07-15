@@ -1,7 +1,7 @@
-import { defineConfig } from "astro/config";
+import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import mdx from "@astrojs/mdx";
+import { defineConfig } from "astro/config";
 
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL,

@@ -1,5 +1,5 @@
-import eslintPluginAstro from "eslint-plugin-astro";
 import js from "@eslint/js";
+import eslintPluginAstro from "eslint-plugin-astro";
 
 export default [
   {
