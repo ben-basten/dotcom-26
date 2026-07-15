@@ -3,7 +3,7 @@ import js from "@eslint/js";
 
 export default [
   {
-    ignores: [".astro"],
+    ignores: [".astro", "astro.config.mjs"],
   },
   // add more generic rule sets here, such as:
   js.configs.recommended,

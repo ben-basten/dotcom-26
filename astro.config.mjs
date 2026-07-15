@@ -4,7 +4,7 @@ import tailwindcss from "@tailwindcss/vite";
 import mdx from "@astrojs/mdx";
 
 export default defineConfig({
-  site: import.meta.env.DEPLOY_PRIME_URL,
+  site: process.env.DEPLOY_PRIME_URL,
   integrations: [sitemap(), mdx()],
   vite: {
     plugins: [tailwindcss()],
