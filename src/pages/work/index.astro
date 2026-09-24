@@ -9,7 +9,7 @@ const workEntries = await getCollection("work");
 
 <BaseLayout title="Work">
   <ContentContainer as="section">
-    <div class="py-12 space-y-4">
+    <div class="pt-nav-height pb-12 space-y-4">
       <Heading as="h1">Work</Heading>
       {
         workEntries.length === 0 ? (

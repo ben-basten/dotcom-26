@@ -24,10 +24,9 @@ const work = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
-    published: z.coerce.date(),
     summary: z.string(),
+    role: z.string().optional(),
     stack: z.array(z.string()).default([]),
-    repoUrl: z.url().optional(),
     demoUrl: z.url().optional(),
   }),
 });

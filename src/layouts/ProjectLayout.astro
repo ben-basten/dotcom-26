@@ -13,20 +13,10 @@ const { work } = Astro.props as Props;
 
 <BaseLayout title={work.data.title} description={work.data.summary}>
   <ContentContainer>
-    <article class="py-12 space-y-6">
+    <article class="pt-nav-height pb-12 space-y-6">
       <header class="space-y-2">
         <Heading as="h1">{work.data.title}</Heading>
-        <p class="type-body text-sm text-black/70">
-          <time datetime={work.data.published.toISOString()}>
-            {
-              work.data.published.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })
-            }
-          </time>
-        </p>
+        {work.data.role && <p class="type-body">{work.data.role}</p>}
         <p class="type-body">{work.data.summary}</p>
         {
           work.data.stack.length > 0 && (

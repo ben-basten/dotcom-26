@@ -1,0 +1,3 @@
+@utility nav-active {
+  @apply scale-125 -rotate-10;
+}

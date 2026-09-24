@@ -2,20 +2,38 @@
 @import "./_typography.css";
 @import "./_reset.css";
 @import "./_animation.css";
+@import "./_components.css";
 
 @theme {
   /* Colors */
   --color-background: #fefee3;
   --color-foreground: #131513;
-  --color-forest: #2a482e;
-  --color-accent: #e08dac;
-  --color-secondary: #084887;
+  --color-accent: #2a482e;
+  --color-secondary: #e08dac;
+  --color-primary: #084887;
 
   /* Fonts */
   --font-primary: var(--font-asap);
 
   /* Animation */
   --ease-default: cubic-bezier(0.516, 0.005, 0.198, 0.843);
+  --ease-snap: linear(
+    0,
+    0.029 1.3%,
+    0.119 2.8%,
+    0.659 8.7%,
+    0.871 11.6%,
+    1.009 14.6%,
+    1.052 16.2%,
+    1.078 17.9%,
+    1.088 19.7%,
+    1.085 21.7%,
+    1.014 31.4%,
+    0.993 38%,
+    1.001 57.6%,
+    1
+  );
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
 
   /* Spacing */
   --spacing-inset: 20px;
@@ -24,6 +42,8 @@
   --spacing-side: 50px;
   --spacing-side-mobile: 25px;
   --spacing-max-width: 90rem;
+  --spacing-nav-bar: 3.5rem;
+  --spacing-nav-height: calc(var(--spacing-nav-bar) + 2 * var(--spacing-inset));
 }
 
 @layer base {
