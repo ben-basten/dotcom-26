@@ -5,8 +5,11 @@
 
 @theme {
   /* Colors */
-  --color-background: #ffffff;
-  --color-foreground: black;
+  --color-background: #fefee3;
+  --color-foreground: #131513;
+  --color-forest: #2a482e;
+  --color-accent: #e08dac;
+  --color-secondary: #084887;
 
   /* Fonts */
   --font-primary: var(--font-asap);
