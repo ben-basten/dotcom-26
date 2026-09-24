@@ -5,27 +5,31 @@
 
 @theme {
   /* Colors */
-  --color-background: #ffffff;
-  --color-foreground: black;
+  --color-background: #fefee3;
+  --color-foreground: #131513;
+  --color-forest: #2a482e;
+  --color-accent: #e08dac;
+  --color-secondary: #084887;
 
   /* Fonts */
-  --font-primary: sans-serif;
+  --font-primary: var(--font-asap);
 
   /* Animation */
   --ease-default: cubic-bezier(0.516, 0.005, 0.198, 0.843);
 
   /* Spacing */
+  --spacing-inset: 20px;
   --spacing-vertical: 50px;
   --spacing-vertical-lg: 100px;
   --spacing-side: 50px;
   --spacing-side-mobile: 25px;
-  --spacing-max-width: 1500px;
+  --spacing-max-width: 90rem;
 }
 
 @layer base {
   body {
     font-size: 100%;
-    font-family: var(--font-primary);
+    font-family: var(--font-primary), sans-serif;
     background-color: var(--color-background);
     color: var(--color-foreground);
   }
@@ -37,5 +41,11 @@
 
   *:focus-visible {
     @apply outline-foreground outline-2 outline-offset-2 transition-none;
+  }
+
+  @media (width < 48rem) {
+    :root {
+      --spacing-inset: 10px;
+    }
   }
 }

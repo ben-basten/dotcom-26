@@ -1,15 +1,29 @@
 ---
 interface Props {
   as?: "div" | "section";
+  class?: string;
+  width?: "default" | "wide";
+  fullWidth?: boolean;
 }
 
-const { as = "div" } = Astro.props as Props;
+const {
+  as = "div",
+  class: className,
+  width = "default",
+} = Astro.props as Props;
 const Tag = as;
 ---
 
 <Tag
   data-name="container"
-  class="px-side-mobile md:px-side mx-auto w-full max-w-max-width"
+  class:list={[
+    "mx-auto max-w-max-width",
+    {
+      "px-side-mobile md:px-side": width === "default",
+      "px-inset": width === "wide",
+    },
+    className,
+  ]}
 >
   <slot />
 </Tag>
