@@ -1,1 +1,48 @@
-<nav class="text-center">Main Navigation</nav>
+---
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import Logo from "./Logo.astro";
+
+type Link = {
+  text: string;
+  href: string;
+};
+
+const links: Link[] = [
+  { text: "Work", href: "/work" },
+  { text: "Blog", href: "/posts" },
+];
+---
+
+<nav class="fixed top-inset w-full z-1000">
+  <ContentContainer class="mt-inset">
+    <div class="flex justify-between items-center">
+      <Logo />
+      <div class="self-stretch flex gap-5">
+        <div
+          class="bg-background border-3 border-forest px-7.5 py-1 flex h-full items-center gap-8 rounded-lg"
+        >
+          {
+            links.map((link) => (
+              <a
+                href={link.href}
+                class="text-xl font-semibold focus:scale-150 focus:-rotate-15 hover:scale-150 hover:-rotate-15 transition-transform duration-default ease-[linear(0,0.029_1.3%,0.119_2.8%,0.659_8.7%,0.871_11.6%,1.009_14.6%,1.052_16.2%,1.078_17.9%,1.088_19.7%,1.085_21.7%,1.014_31.4%,0.993_38%,1.001_57.6%,1)]"
+              >
+                {link.text}
+              </a>
+            ))
+          }
+        </div>
+        <a
+          href="/contact"
+          class="group rounded-lg text-white text-xl font-semibold shadow-[0.25rem_0.25rem_0_var(--color-foreground)]"
+        >
+          <span
+            class="flex items-center rounded-lg h-full w-full bg-secondary px-5 py-1 transition-transform group-hover:translate-x-1 group-hover:translate-y-1 ease-[linear(0,0.029_1.3%,0.119_2.8%,0.659_8.7%,0.871_11.6%,1.009_14.6%,1.052_16.2%,1.078_17.9%,1.088_19.7%,1.085_21.7%,1.014_31.4%,0.993_38%,1.001_57.6%,1)]"
+          >
+            Contact
+          </span>
+        </a>
+      </div>
+    </div>
+  </ContentContainer>
+</nav>
