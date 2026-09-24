@@ -9,7 +9,7 @@
   --color-foreground: black;
 
   /* Fonts */
-  --font-primary: sans-serif;
+  --font-primary: var(--font-asap);
 
   /* Animation */
   --ease-default: cubic-bezier(0.516, 0.005, 0.198, 0.843);
@@ -25,7 +25,7 @@
 @layer base {
   body {
     font-size: 100%;
-    font-family: var(--font-primary);
+    font-family: var(--font-primary), sans-serif;
     background-color: var(--color-background);
     color: var(--color-foreground);
   }

@@ -1,7 +1,7 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL,
@@ -14,4 +14,12 @@ export default defineConfig({
       theme: "dark-plus",
     },
   },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Asap",
+      cssVariable: "--font-asap",
+      weights: [400, 500, 600, 700, 800],
+    },
+  ],
 });

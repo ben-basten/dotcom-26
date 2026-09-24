@@ -1,6 +1,7 @@
 ---
 import Footer from "~/components/navigation/Footer.astro";
 import MainNavigation from "~/components/navigation/MainNavigation.astro";
+import { Font } from "astro:assets";
 import "~/styles/main.css";
 
 interface Props {
@@ -14,6 +15,7 @@ const { title = "Ben Basten", description } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
+    <Font cssVariable="--font-asap" />
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.ico" />
