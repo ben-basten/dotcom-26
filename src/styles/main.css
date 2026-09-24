@@ -22,7 +22,7 @@
   --spacing-vertical-lg: 100px;
   --spacing-side: 50px;
   --spacing-side-mobile: 25px;
-  --spacing-max-width: 1500px;
+  --spacing-max-width: 90rem;
 }
 
 @layer base {

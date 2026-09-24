@@ -25,9 +25,9 @@ const { title = "Ben Basten", description } = Astro.props;
     {description && <meta name="description" content={description} />}
   </head>
   <body>
-    <div class="min-h-screen flex flex-col">
+    <div class="min-h-screen">
       <MainNavigation />
-      <main tabindex="-1" class="outline-none flex-1 isolate">
+      <main tabindex="-1" class="outline-none isolate">
         <slot />
       </main>
       <Footer />
