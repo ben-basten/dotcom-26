@@ -12,7 +12,7 @@ const { post } = Astro.props;
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <ContentContainer as="section">
+  <ContentContainer>
     <article class="py-12 space-y-6">
       <header class="space-y-2">
         <Heading as="h1">{post.data.title}</Heading>
