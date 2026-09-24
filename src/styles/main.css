@@ -42,6 +42,8 @@
   --spacing-side: 50px;
   --spacing-side-mobile: 25px;
   --spacing-max-width: 90rem;
+  --spacing-nav-bar: 3.5rem;
+  --spacing-nav-height: calc(var(--spacing-nav-bar) + 2 * var(--spacing-inset));
 }
 
 @layer base {
