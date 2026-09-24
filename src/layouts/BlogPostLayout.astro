@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
+import Hero from "~/components/common/Hero.astro";
 import Heading from "~/components/base/Heading.astro";
 
 interface Props {
@@ -12,6 +13,7 @@ const { post } = Astro.props;
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
+  <Hero />
   <ContentContainer>
     <article class="py-12 space-y-6">
       <header class="space-y-2">

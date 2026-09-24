@@ -18,6 +18,7 @@
   --ease-default: cubic-bezier(0.516, 0.005, 0.198, 0.843);
 
   /* Spacing */
+  --spacing-inset: 20px;
   --spacing-vertical: 50px;
   --spacing-vertical-lg: 100px;
   --spacing-side: 50px;
@@ -40,5 +41,11 @@
 
   *:focus-visible {
     @apply outline-foreground outline-2 outline-offset-2 transition-none;
+  }
+
+  @media (width < 48rem) {
+    :root {
+      --spacing-inset: 10px;
+    }
   }
 }
