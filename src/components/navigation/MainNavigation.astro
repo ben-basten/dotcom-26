@@ -31,7 +31,7 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
                 }
                 class:list={[
                   "text-xl font-semibold hover:nav-active transition-transform duration-default ease-snap",
-                  'aria-[current="page"]:border-b-2 border-secondary aria-[current="page"]:-rotate-10',
+                  'aria-[current="page"]:border-b-2 border-secondary aria-[current="page"]:nav-active',
                 ]}
               >
                 {link.text}
@@ -47,7 +47,7 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
           class="group rounded-lg text-white text-xl font-semibold shadow-[0.25rem_0.25rem_0_var(--color-foreground)] outline-offset-6"
         >
           <span
-            class="flex items-center rounded-lg h-full w-full bg-secondary px-5 py-1 transition-transform group-hover:translate-x-1 group-hover:translate-y-1 ease-snap"
+            class="flex items-center rounded-lg h-full w-full bg-secondary px-5 py-1 transition-transform group-hover:translate-x-1 group-hover:translate-y-1 ease-out"
           >
             {ctaLink.text}
           </span>
