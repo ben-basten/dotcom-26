@@ -8,9 +8,9 @@
   /* Colors */
   --color-background: #fefee3;
   --color-foreground: #131513;
-  --color-forest: #2a482e;
-  --color-accent: #e08dac;
-  --color-secondary: #084887;
+  --color-accent: #2a482e;
+  --color-secondary: #e08dac;
+  --color-primary: #084887;
 
   /* Fonts */
   --font-primary: var(--font-asap);

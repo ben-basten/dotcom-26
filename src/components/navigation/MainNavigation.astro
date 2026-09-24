@@ -21,7 +21,7 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
       <Logo />
       <div class="self-stretch flex gap-5">
         <div
-          class="bg-background border-3 border-forest px-7.5 py-1 flex h-full items-center gap-8 rounded-lg"
+          class="bg-background border-3 border-accent px-7.5 py-1 flex h-full items-center gap-8 rounded-lg"
         >
           {
             links.map((link) => (
@@ -32,7 +32,7 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
                 }
                 class:list={[
                   "text-xl font-semibold hover:nav-active transition-transform duration-default ease-snap",
-                  'aria-[current="page"]:border-b-2 border-secondary aria-[current="page"]:nav-active',
+                  'aria-[current="page"]:border-b-2 border-primary aria-[current="page"]:nav-active',
                 ]}
               >
                 {link.text}
