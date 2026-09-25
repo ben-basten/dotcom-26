@@ -1,6 +1,7 @@
 ---
 import Button from "~/components/base/Button.astro";
 import type { NavLink } from "~/types/NavLink";
+import { normalizePathname } from "~/utils/url.helpers";
 
 interface Props {
   links: NavLink[];
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const { links, ctaLink } = Astro.props;
+const currentPath = normalizePathname(Astro.url.pathname);
 ---
 
 <details class="md:hidden">
@@ -26,7 +28,7 @@ const { links, ctaLink } = Astro.props;
       links.map((link) => (
         <a
           href={link.href}
-          aria-current={Astro.url.pathname === link.href ? "page" : undefined}
+          aria-current={currentPath === link.href ? "page" : undefined}
           class="text-4xl font-bold text-foreground hover:text-primary aria-[current=page]:text-primary"
         >
           {link.text}
@@ -36,7 +38,7 @@ const { links, ctaLink } = Astro.props;
     <Button
       href={ctaLink.href}
       size="lg"
-      aria-current={Astro.url.pathname === ctaLink.href ? "page" : undefined}
+      aria-current={currentPath === ctaLink.href ? "page" : undefined}
     >
       {ctaLink.text}
     </Button>
