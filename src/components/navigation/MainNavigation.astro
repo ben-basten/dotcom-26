@@ -19,10 +19,8 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
   <ContentContainer class="mt-inset">
     <div class="flex justify-between items-center h-nav-bar">
       <Logo />
-      <div class="self-stretch flex gap-5">
-        <div
-          class="bg-background border-3 border-accent px-7.5 py-1 flex h-full items-center gap-8 rounded-lg"
-        >
+      <div class="self-stretch flex gap-7.5">
+        <div class="flex h-full items-center gap-3.5">
           {
             links.map((link) => (
               <a
@@ -31,8 +29,9 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
                   Astro.url.pathname === link.href ? "page" : undefined
                 }
                 class:list={[
-                  "text-xl font-semibold hover:nav-active active:nav-active transition-transform duration-default ease-snap",
-                  'aria-[current="page"]:border-b-2 border-primary aria-[current="page"]:nav-active',
+                  "relative text-xl font-semibold hover:z-5 hover:nav-active active:nav-active hover:bg-theme-light transition-[rotate,scale,background-color] duration-default ease-snap",
+                  "bg-background px-5 py-2 rounded-lg border-3 border-theme-dark",
+                  'aria-[current="page"]:nav-active',
                 ]}
               >
                 {link.text}

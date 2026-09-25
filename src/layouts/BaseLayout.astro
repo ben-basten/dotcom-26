@@ -36,13 +36,10 @@ const colorClasses: Record<Color, string> = {
     <title>{pageTitle}</title>
     {description && <meta name="description" content={description} />}
   </head>
-  <body>
+  <body class={colorClasses[color]}>
     <div class="flex min-h-dvh flex-col">
       <MainNavigation />
-      <main
-        tabindex="-1"
-        class:list={["flex-1 outline-none isolate", colorClasses[color]]}
-      >
+      <main tabindex="-1" class="flex-1 outline-none isolate">
         <slot />
       </main>
       <Footer />

@@ -53,6 +53,11 @@
   --spacing-nav-height: calc(var(--spacing-nav-bar) + 2 * var(--spacing-inset));
 }
 
+@theme inline {
+  --color-theme-dark: oklch(from var(--color-theme) calc(l - 0.25) c h);
+  --color-theme-light: oklch(from var(--color-theme) calc(l + 0.5) c h);
+}
+
 @layer base {
   body {
     font-size: 100%;
