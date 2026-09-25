@@ -11,7 +11,11 @@ interface Props {
 const { work } = Astro.props as Props;
 ---
 
-<BaseLayout title={work.data.title} description={work.data.summary}>
+<BaseLayout
+  title={work.data.title}
+  description={work.data.summary}
+  color="pink"
+>
   <ContentContainer>
     <article class="pt-nav-height pb-12 space-y-6">
       <header class="space-y-2">

@@ -1,56 +1,23 @@
 ---
-import Button from "~/components/base/Button.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
+import DesktopNav from "./DesktopNav.astro";
 import Logo from "./Logo.astro";
+import MobileNav from "./MobileNav.astro";
+import type { NavLink } from "~/types/NavLink";
 
-type Link = {
-  text: string;
-  href: string;
-};
-
-const links: Link[] = [
+const links: NavLink[] = [
   { text: "Work", href: "/work" },
   { text: "Blog", href: "/posts" },
 ];
-const ctaLink: Link = { text: "Contact", href: "/contact" };
+const ctaLink: NavLink = { text: "Contact", href: "/contact" };
 ---
 
 <nav class="fixed top-inset w-full z-1000">
   <ContentContainer class="mt-inset">
     <div class="flex justify-between items-center h-nav-bar">
       <Logo />
-      <div class="self-stretch flex gap-5">
-        <div
-          class="bg-background border-3 border-accent px-7.5 py-1 flex h-full items-center gap-8 rounded-lg"
-        >
-          {
-            links.map((link) => (
-              <a
-                href={link.href}
-                aria-current={
-                  Astro.url.pathname === link.href ? "page" : undefined
-                }
-                class:list={[
-                  "text-xl font-semibold hover:nav-active transition-transform duration-default ease-snap",
-                  'aria-[current="page"]:border-b-2 border-primary aria-[current="page"]:nav-active',
-                ]}
-              >
-                {link.text}
-              </a>
-            ))
-          }
-        </div>
-        <Button
-          href={ctaLink.href}
-          size="md"
-          aria-current={Astro.url.pathname === ctaLink.href
-            ? "page"
-            : undefined}
-          class="h-full"
-        >
-          {ctaLink.text}
-        </Button>
-      </div>
+      <DesktopNav links={links} ctaLink={ctaLink} />
+      <MobileNav links={links} ctaLink={ctaLink} />
     </div>
   </ContentContainer>
 </nav>
