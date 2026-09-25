@@ -9,8 +9,15 @@
   --color-background: #fefee3;
   --color-foreground: #131513;
   --color-accent: #2a482e;
-  --color-secondary: #e08dac;
+  --color-theme: var(--color-theme-pink);
   --color-primary: #084887;
+
+  /* Page themes */
+  --color-theme-pink: #e08dac;
+  --color-theme-green: #94bfa7;
+  --color-theme-mango: #f4b886;
+  --color-theme-periwinkle: #7f7ec9;
+  --color-theme-blue: #72a1e5;
 
   /* Fonts */
   --font-primary: var(--font-asap);

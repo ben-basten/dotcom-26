@@ -31,7 +31,7 @@ const ctaLink: Link = { text: "Contact", href: "/contact" };
                   Astro.url.pathname === link.href ? "page" : undefined
                 }
                 class:list={[
-                  "text-xl font-semibold hover:nav-active transition-transform duration-default ease-snap",
+                  "text-xl font-semibold hover:nav-active active:nav-active transition-transform duration-default ease-snap",
                   'aria-[current="page"]:border-b-2 border-primary aria-[current="page"]:nav-active',
                 ]}
               >
