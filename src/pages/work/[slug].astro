@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import ProjectLayout from "~/layouts/ProjectLayout.astro";
+import SEO from "~/components/common/SEO.astro";
 
 export async function getStaticPaths() {
   const workEntries = await getCollection("work");
@@ -16,5 +17,6 @@ const { Content } = await render(work);
 ---
 
 <ProjectLayout work={work}>
+  <SEO slot="seo" title={work.data.title} description={work.data.excerpt} />
   <Content />
 </ProjectLayout>

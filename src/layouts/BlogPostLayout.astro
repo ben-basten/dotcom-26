@@ -11,11 +11,8 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<BaseLayout
-  title={post.data.title}
-  description={post.data.excerpt}
-  color="mango"
->
+<BaseLayout color="mango">
+  <slot name="seo" slot="seo" />
   <Hero
     heading={post.data.title}
     excerpt={post.data.excerpt}

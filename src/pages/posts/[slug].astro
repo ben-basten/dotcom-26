@@ -1,6 +1,7 @@
 ---
 import { getCollection, render } from "astro:content";
 import BlogPostLayout from "~/layouts/BlogPostLayout.astro";
+import SEO from "~/components/common/SEO.astro";
 
 export async function getStaticPaths() {
   const posts = await getCollection("posts");
@@ -16,5 +17,6 @@ const { Content } = await render(post);
 ---
 
 <BlogPostLayout post={post}>
+  <SEO slot="seo" title={post.data.title} description={post.data.excerpt} />
   <Content />
 </BlogPostLayout>

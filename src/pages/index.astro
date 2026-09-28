@@ -3,9 +3,11 @@ import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import Heading from "~/components/base/Heading.astro";
 import Hero from "~/components/common/Hero.astro";
+import SEO from "~/components/common/SEO.astro";
 ---
 
 <BaseLayout color="green">
+  <SEO slot="seo" title="Ben Basten" />
   <Hero heading="Ben Basten" />
   <ContentContainer>
     <div class="py-12 space-y-4">

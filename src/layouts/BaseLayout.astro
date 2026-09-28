@@ -8,12 +8,9 @@ type Color = "green" | "periwinkle" | "mango" | "blue" | "pink";
 
 interface Props {
   color: Color;
-  description?: string;
-  title?: string;
 }
 
-const { color = "pink", description, title } = Astro.props;
-const pageTitle = title ? `${title} | Ben Basten` : "Ben Basten";
+const { color = "pink" } = Astro.props;
 
 const colorClasses: Record<Color, string> = {
   green: "[--color-theme:var(--color-theme-green)]",
@@ -39,8 +36,7 @@ const colorClasses: Record<Color, string> = {
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{pageTitle}</title>
-    {description && <meta name="description" content={description} />}
+    <slot name="seo" />
   </head>
   <body class={colorClasses[color]}>
     <div class="flex min-h-dvh flex-col">
