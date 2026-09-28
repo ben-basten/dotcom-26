@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import Hero from "~/components/common/Hero.astro";
+
+const pageTitle = "About me";
 ---
 
-<BaseLayout title="Get in touch" color="blue">
-  <Hero heading="About me" />
+<BaseLayout title={pageTitle} color="blue">
+  <Hero heading={pageTitle} />
 </BaseLayout>
