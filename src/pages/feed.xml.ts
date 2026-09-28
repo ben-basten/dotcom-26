@@ -1,14 +1,14 @@
 import rss from "@astrojs/rss";
 import type { APIContext } from "astro";
 import { getCollection } from "astro:content";
+import { TAGLINE } from "~/utils/copy.constants";
 
 export async function GET(context: APIContext) {
   const posts = await getCollection("posts");
 
   return rss({
     title: "Ben Basten",
-    description:
-      "A full stack developer with a passion for accessibility, open source, and collaboration.",
+    description: TAGLINE,
     site: context.site ?? context.url.origin,
     items: posts
       .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
