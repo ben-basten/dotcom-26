@@ -1,12 +1,12 @@
 ---
 title: "Wake Up to an SMS Message"
 date: 2024-02-18T20:05:35-05:00
-tags: ["home-assistant", "tutorial"]
+excerpt: "Using Home Assistant automation to guarantee that I wake up when I'm on call."
 ---
 
 **Problem statement:**
 
-Automate a way to guarantee waking up when an SMS message is received from specified phone numbers.<!--more-->
+Automate a way to guarantee waking up when an SMS message is received from specified phone numbers. My on call rotation pages me with time-sensitive text messages, so I need to guarantee that I wake up on time!
 
 **Solution overview:**
 

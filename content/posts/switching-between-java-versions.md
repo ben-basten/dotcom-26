@@ -1,10 +1,10 @@
 ---
 title: "Switching Between Java Versions"
 date: 2022-02-16T21:47:54-05:00
-tags: ["java", "tutorial", "jdk"]
+excerpt: "How to quickly change Java versions in a Unix terminal environment, to make working with numerous Java apps easier."
 ---
 
-Problem: How do I quickly change between Java versions in the terminal?<!--more-->
+Problem: How do I quickly change between Java versions in the terminal?
 
 I'm currently doing development on an array of different Java apps. For the longest time, all of the apps I was working with only used Java 8. My team is now moving towards a Java 11 stack, so I can't run these apps with just the Java 8 JDK anymore.
 

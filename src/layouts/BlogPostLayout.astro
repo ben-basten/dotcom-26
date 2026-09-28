@@ -13,12 +13,12 @@ const { post } = Astro.props;
 
 <BaseLayout
   title={post.data.title}
-  description={post.data.description}
+  description={post.data.excerpt}
   color="mango"
 >
   <Hero
     heading={post.data.title}
-    excerpt={post.data.description}
+    excerpt={post.data.excerpt}
     subtext={post.data.date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "long",
@@ -27,15 +27,6 @@ const { post } = Astro.props;
   />
   <ContentContainer>
     <article class="mx-auto max-w-[41.25rem] space-y-6 py-12">
-      <header class="space-y-2">
-        {
-          post.data.tags.length > 0 && (
-            <p class="type-body text-sm text-black/70">
-              {post.data.tags.join(", ")}
-            </p>
-          )
-        }
-      </header>
       <div class="space-y-4">
         <slot />
       </div>
