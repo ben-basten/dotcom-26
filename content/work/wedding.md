@@ -1,8 +1,8 @@
 ---
 title: "Wedding event site"
-summary: "Quis laboris magna qui adipisicing eiusmod anim tempor non labore cupidatat nisi est cupidatat aute anim."
+excerpt: "A fun dive into building my wedding website with CMS-driven content for guests, a custom RSVP system, and admin backend for managing guests."
 role: "Personal project"
-stack: []
+stack: ["Nuxt", "Contentful", "Postgres", "Drizzle"]
 ---
 
 Consequat voluptate minim ipsum cillum consectetur magna. Occaecat anim sit dolore. Cillum nulla adipisicing esse incididunt eiusmod nisi velit aliqua laborum ullamco dolor velit irure dolor. Irure labore aute pariatur Lorem occaecat aliqua sunt mollit Lorem proident fugiat nostrud nisi. Sunt eiusmod ipsum reprehenderit incididunt deserunt mollit incididunt. Ad sint veniam esse proident ullamco cupidatat. Voluptate ut laboris culpa. Est laborum sint esse magna tempor est enim duis quis ullamco sit.

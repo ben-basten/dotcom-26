@@ -13,7 +13,7 @@ const { work } = Astro.props as Props;
 
 <BaseLayout
   title={work.data.title}
-  description={work.data.summary}
+  description={work.data.excerpt}
   color="pink"
 >
   <ContentContainer>
@@ -21,7 +21,7 @@ const { work } = Astro.props as Props;
       <header class="space-y-2">
         <Heading as="h1">{work.data.title}</Heading>
         {work.data.role && <p class="type-body">{work.data.role}</p>}
-        <p class="type-body">{work.data.summary}</p>
+        <p class="type-body">{work.data.excerpt}</p>
         {
           work.data.stack.length > 0 && (
             <p class="type-body text-sm text-black/70">
