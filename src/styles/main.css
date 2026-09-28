@@ -72,6 +72,10 @@
     cursor: pointer;
   }
 
+  a {
+    @apply underline font-medium text-foreground hover:text-theme-dark transition-colors duration-default ease-in-out;
+  }
+
   *:focus-visible {
     @apply outline-foreground outline-2 outline-offset-2 transition-none;
   }
