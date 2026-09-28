@@ -1,12 +1,12 @@
 ---
 title: "Starting a blog with Hugo... lots to learn!"
 date: 2022-01-16T21:25:15-05:00
-tags: ["podcast", "hugo"]
+excerpt: "Diving into building a static blog site with Hugo. Time to give myself the gift of having a public place to share my writing!"
 ---
 
 The other day, I watched a YouTube presentation called ["Give Yourself a Blog for Christmas"](https://www.youtube.com/watch?v=NKHF5VZmCig&t=831s)
 that one of my favorite podcasters, Jack Rhysider, shared. Jack argued that anyone can benefit from a podcast, whether
-it's for posting documentation to look back on later or to share out ideas for others to benefit from on the vast internet. <!--more-->
+it's for posting documentation to look back on later or to share out ideas for others to benefit from on the vast internet.
 
 This really inspired me - why not start a blog? I think it'll be a fun exercise to deliberately document my findings,
 share out anything I've learned, or just write about anything that's been on my mind.

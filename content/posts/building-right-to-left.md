@@ -1,10 +1,10 @@
 ---
 title: "Building Frontend with Right-to-Left Support"
 date: 2026-07-07T20:02:13-04:00
-tags: ["frontend"]
+excerpt: "Using web standards and TailwindCSS tooling to build intuitive websites for right-to-left languages."
 ---
 
-Supporting right-to-left (RTL) languages such as Arabic requires intentional development to guarantee a consistent and equitable browsing experience regardless of the language a user speaks. Web standards and Tailwind tooling are here to help!<!--more-->
+Supporting right-to-left (RTL) languages such as Arabic requires intentional development to guarantee a consistent and equitable browsing experience regardless of the language a user speaks. Web standards and Tailwind tooling are here to help!
 
 The goal is to provide an equitable browsing experience for RTL users that is equivalent to the experience of users browsing the site in English. By mirroring important content to the right side of the page, we guide RTL users through the same key pathways and draw their attention to the same focal points that English speakers would naturally encounter.
 

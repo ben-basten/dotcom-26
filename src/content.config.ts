@@ -11,8 +11,7 @@ const posts = defineCollection({
   schema: z.object({
     title: z.string(),
     date: z.coerce.date(),
-    tags: z.array(z.string()).default([]),
-    description: z.string().optional(),
+    excerpt: z.string(),
   }),
 });
 
@@ -24,7 +23,7 @@ const work = defineCollection({
   }),
   schema: z.object({
     title: z.string(),
-    summary: z.string(),
+    excerpt: z.string(),
     role: z.string().optional(),
     stack: z.array(z.string()).default([]),
     demoUrl: z.url().optional(),

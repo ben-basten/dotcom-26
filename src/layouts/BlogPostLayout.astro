@@ -3,7 +3,6 @@ import type { CollectionEntry } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import Hero from "~/components/common/Hero.astro";
-import Heading from "~/components/base/Heading.astro";
 
 interface Props {
   post: CollectionEntry<"posts">;
@@ -12,35 +11,19 @@ interface Props {
 const { post } = Astro.props;
 ---
 
-<BaseLayout
-  title={post.data.title}
-  description={post.data.description}
-  color="mango"
->
-  <Hero />
+<BaseLayout color="mango">
+  <slot name="seo" slot="seo" />
+  <Hero
+    heading={post.data.title}
+    excerpt={post.data.excerpt}
+    subtext={post.data.date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "long",
+      day: "numeric",
+    })}
+  />
   <ContentContainer>
-    <article class="py-12 space-y-6">
-      <header class="space-y-2">
-        <Heading as="h1">{post.data.title}</Heading>
-        <p class="type-body text-sm text-black/70">
-          <time datetime={post.data.date.toISOString()}>
-            {
-              post.data.date.toLocaleDateString("en-US", {
-                year: "numeric",
-                month: "long",
-                day: "numeric",
-              })
-            }
-          </time>
-        </p>
-        {
-          post.data.tags.length > 0 && (
-            <p class="type-body text-sm text-black/70">
-              {post.data.tags.join(", ")}
-            </p>
-          )
-        }
-      </header>
+    <article class="mx-auto max-w-[41.25rem] space-y-6 py-12">
       <div class="space-y-4">
         <slot />
       </div>

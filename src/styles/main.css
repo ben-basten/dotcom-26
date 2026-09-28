@@ -54,7 +54,7 @@
 }
 
 @theme inline {
-  --color-theme-dark: oklch(from var(--color-theme) calc(l - 0.25) c h);
+  --color-theme-dark: oklch(from var(--color-theme) calc(l - 0.35) c h);
   --color-theme-light: oklch(from var(--color-theme) calc(l + 0.5) c h);
 }
 

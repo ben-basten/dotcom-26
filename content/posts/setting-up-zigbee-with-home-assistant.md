@@ -1,10 +1,10 @@
 ---
 title: "Setting Up Zigbee With Home Assistant"
 date: 2022-11-22T22:01:08-05:00
-tags: ["home-assistant", "zigbee"]
+excerpt: "Expanding my home automation with a network of Zigbee devices."
 ---
 
-Now that my Home Assistant server is set up, it's time to start adding device integrations! But... there's some choices to make before diving into this and buying new smart devices. Let's break those down!<!--more-->
+Now that my Home Assistant server is set up, it's time to start adding device integrations! But... there's some choices to make before diving into this and buying new smart devices. Let's break those down!
 
 There are 3 main ways to connect a device to Home Assistant: Zigbee, Z-Wave, and WiFi. Zigbee has 2 different techniques that you can use to pair devices: Zigbee Home Automation (ZHA) and Zigbee2MQTT.
 

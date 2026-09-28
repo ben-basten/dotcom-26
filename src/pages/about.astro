@@ -1,0 +1,12 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Hero from "~/components/common/Hero.astro";
+import SEO from "~/components/common/SEO.astro";
+
+const pageTitle = "About me";
+---
+
+<BaseLayout color="blue">
+  <SEO slot="seo" title={pageTitle} />
+  <Hero heading={pageTitle} />
+</BaseLayout>
