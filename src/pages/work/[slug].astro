@@ -1,6 +1,8 @@
 ---
 import { getCollection, render } from "astro:content";
-import ProjectLayout from "~/layouts/ProjectLayout.astro";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import PostHero from "~/components/common/PostHero.astro";
 import SEO from "~/components/common/SEO.astro";
 
 export async function getStaticPaths() {
@@ -16,7 +18,25 @@ const { work } = Astro.props;
 const { Content } = await render(work);
 ---
 
-<ProjectLayout work={work}>
+<BaseLayout color="pink">
   <SEO slot="seo" title={work.data.title} description={work.data.excerpt} />
-  <Content />
-</ProjectLayout>
+  <article>
+    <PostHero
+      title={work.data.title}
+      excerpt={work.data.excerpt}
+      subtext={work.data.role}
+    />
+    <ContentContainer class="relative z-2">
+      <div class="mb-15 md:mb-20 markdown-content">
+        {
+          work.data.stack.length > 0 && (
+            <p class="type-body text-sm text-black/70">
+              {work.data.stack.join(", ")}
+            </p>
+          )
+        }
+        <Content />
+      </div>
+    </ContentContainer>
+  </article>
+</BaseLayout>
