@@ -2,6 +2,7 @@
 title: "Audible for Business"
 excerpt: "Driving sales for Audible's new bulk purchasing program, while empowering authors to easily create or update content."
 role: "Technical lead"
+date: 2026-09-01
 stack: ["Next.js", "Headless CMS", "Salesforce Pardot"]
 ---
 

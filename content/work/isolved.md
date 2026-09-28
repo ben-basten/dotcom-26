@@ -2,6 +2,7 @@
 title: "isolved"
 excerpt: "Building a new landing page to increase conversions, improve SEO, and scale for their increasing content needs."
 role: "Technical lead"
+date: 2026-01-01
 stack:
   [
     "Nuxt",

@@ -24,6 +24,7 @@ const work = defineCollection({
   schema: z.object({
     title: z.string(),
     excerpt: z.string(),
+    date: z.coerce.date(),
     role: z.string().optional(),
     stack: z.array(z.string()).default([]),
     demoUrl: z.url().optional(),

@@ -2,6 +2,7 @@
 title: "Wedding event site"
 excerpt: "A fun dive into building my wedding website with CMS-driven content for guests, a custom RSVP system, and admin backend for managing guests."
 role: "Personal project"
+date: 2026-04-01
 stack: ["Nuxt", "Contentful", "Postgres", "Drizzle"]
 ---
 

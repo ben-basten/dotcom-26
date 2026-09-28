@@ -1,6 +1,7 @@
 ---
 title: "HealthPartners location search"
 excerpt: "Rethinking the HealthPartners location search tool to improve accessibility and user experience."
+date: 2025-05-01
 stack: ["Nuxt", "Mapbox", "Stencil.js"]
 ---
 

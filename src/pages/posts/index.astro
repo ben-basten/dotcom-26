@@ -1,14 +1,12 @@
 ---
 import { getCollection } from "astro:content";
 import ContentContainer from "~/components/base/ContentContainer.astro";
-import Heading from "~/components/base/Heading.astro";
 import MediaHero from "~/components/common/MediaHero.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import SEO from "~/components/common/SEO.astro";
+import { compareByDateDesc } from "~/utils/date.helpers";
 
-const posts = (await getCollection("posts")).sort(
-  (a, b) => b.data.date.getTime() - a.data.date.getTime(),
-);
+const posts = (await getCollection("posts")).sort(compareByDateDesc);
 ---
 
 <BaseLayout color="mango">
@@ -16,7 +14,6 @@ const posts = (await getCollection("posts")).sort(
   <MediaHero title="Blog" />
   <ContentContainer as="section">
     <div class="pt-nav-height pb-12 space-y-4">
-      <Heading as="h1">Posts</Heading>
       {
         posts.length === 0 ? (
           <p class="type-body">No posts yet.</p>
