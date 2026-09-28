@@ -4,6 +4,8 @@ date: 2022-01-16T21:25:15-05:00
 excerpt: "Diving into building a static blog site with Hugo. Time to give myself the gift of having a public place to share my writing!"
 ---
 
+> **October 2026 update:** this blog has been rebuilt, and is no longer using the Hugo static site generator.
+
 The other day, I watched a YouTube presentation called ["Give Yourself a Blog for Christmas"](https://www.youtube.com/watch?v=NKHF5VZmCig&t=831s)
 that one of my favorite podcasters, Jack Rhysider, shared. Jack argued that anyone can benefit from a podcast, whether
 it's for posting documentation to look back on later or to share out ideas for others to benefit from on the vast internet.
