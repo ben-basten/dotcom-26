@@ -1,0 +1,58 @@
+---
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import Heading from "~/components/base/Heading.astro";
+
+interface Props {
+  title: string;
+  excerpt?: string;
+  subtext?: string;
+  image?: string;
+}
+
+const { title, excerpt, subtext, image } = Astro.props;
+---
+
+<section class="relative isolate w-full overflow-x-clip">
+  <div
+    aria-hidden="true"
+    class="post-hero-gradient absolute inset-x-0 top-0 -bottom-16 z-0 bg-linear-to-b from-theme to-background"
+  >
+  </div>
+  <ContentContainer>
+    <div
+      class="relative z-10 mx-auto flex max-w-175 flex-col gap-y-5 pt-[calc(var(--spacing-nav-height)+6rem)] pb-14 text-center"
+    >
+      <div
+        aria-hidden="true"
+        class="pointer-events-none absolute left-1/2 top-2/3 -z-10 h-[150%] w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-background)_0%,transparent_72%)]"
+      >
+      </div>
+      <Heading as="h1">{title}</Heading>
+      {excerpt && <p class="type-body max-w-120 mx-auto">{excerpt}</p>}
+      {subtext && <p class="type-body text-sm font-semibold">{subtext}</p>}
+      {image && <img class="h-auto max-w-full" src={image} alt="" />}
+    </div>
+  </ContentContainer>
+</section>
+
+<style>
+  .post-hero-gradient {
+    animation: post-hero-fade-in 1s ease-out both;
+  }
+
+  @keyframes post-hero-fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .post-hero-gradient {
+      animation: none;
+    }
+  }
+</style>

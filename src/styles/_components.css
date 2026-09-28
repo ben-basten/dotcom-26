@@ -1,3 +1,7 @@
 @utility nav-active {
   @apply scale-125 -rotate-10;
 }
+
+@utility markdown-content {
+  @apply max-w-article mx-auto *:mb-4 *:last:mb-0 *:first:mt-0 [&_h1,h2,h3,h4,h5,h6]:mt-7.5 [&_pre]:rounded-lg [&_pre]:px-2 [&_pre]:py-1;
+}
