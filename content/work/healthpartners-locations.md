@@ -7,6 +7,7 @@ stack: ["Nuxt", "Mapbox", "Stencil.js"]
 hero:
   image: "../../src/images/work/healthpartners-2000-85.webp"
   alt: "Laptop showing the HealthPartners website"
+theme: blue
 ---
 
 Elit proident et aliqua. Adipisicing id deserunt proident culpa dolore amet excepteur ea nostrud in occaecat. Cupidatat minim ex non excepteur et sunt velit anim. Lorem voluptate velit qui fugiat minim cupidatat quis reprehenderit laboris commodo. Labore excepteur sunt elit ut irure aute consequat dolore ad laborum enim officia non aliquip. Lorem incididunt anim ex enim est Lorem consequat laborum laboris nisi ullamco magna. Do laborum ea culpa aute ad nulla amet adipisicing culpa cupidatat ex aute exercitation ullamco cillum.

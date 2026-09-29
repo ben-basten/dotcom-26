@@ -1,15 +1,18 @@
 ---
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import Heading from "~/components/base/Heading.astro";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
 
 interface Props {
   title: string;
   excerpt?: string;
   subtext?: string;
-  image?: string;
+  image?: ImageMetadata;
+  imageAlt?: string;
 }
 
-const { title, excerpt, subtext, image } = Astro.props;
+const { title, excerpt, subtext, image, imageAlt = "" } = Astro.props;
 ---
 
 <section class="relative isolate w-full overflow-x-clip">
@@ -18,20 +21,31 @@ const { title, excerpt, subtext, image } = Astro.props;
     class="post-hero-gradient absolute inset-x-0 top-0 -bottom-16 z-0 bg-linear-to-b from-theme to-background"
   >
   </div>
-  <ContentContainer>
+  <ContentContainer class="mb-14">
     <div
-      class="relative z-10 mx-auto flex max-w-175 flex-col gap-y-5 pt-[calc(var(--spacing-nav-height)+6rem)] pb-14 text-center"
+      class="[--spacing-hero-top:3rem] md:[--spacing-hero-top:6rem] relative z-2 mx-auto flex flex-col max-w-175 items-center gap-y-5 pt-[calc(var(--spacing-nav-height)+var(--spacing-hero-top))] text-center"
     >
       <div
         aria-hidden="true"
-        class="pointer-events-none absolute left-1/2 top-2/3 -z-10 h-[150%] w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-background)_0%,transparent_72%)]"
+        class="pointer-events-none absolute left-1/2 top-2/3 -z-10 h-[200%] w-[200%] -translate-x-1/2 -translate-y-1/2 bg-[radial-gradient(ellipse_at_center,var(--color-background)_0%,transparent_72%)]"
       >
       </div>
       <Heading as="h1">{title}</Heading>
       {excerpt && <p class="type-body max-w-120 mx-auto">{excerpt}</p>}
       {subtext && <p class="type-body text-sm font-semibold">{subtext}</p>}
-      {image && <img class="h-auto max-w-full" src={image} alt="" />}
     </div>
+    {
+      image && (
+        <Image
+          class="relative bg-theme-light z-2 mt-10 mx-auto w-full max-w-250 aspect-3/2 object-cover rounded-lg"
+          src={image}
+          alt={imageAlt}
+          widths={[400, 640, 800, 1000, 1600, 2000]}
+          sizes="100vw"
+          quality="high"
+        />
+      )
+    }
   </ContentContainer>
 </section>
 

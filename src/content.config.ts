@@ -1,6 +1,7 @@
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { defineCollection } from "astro:content";
+import { THEME_COLORS } from "./utils/copy.constants";
 
 const posts = defineCollection({
   type: "content_layer",
@@ -35,6 +36,7 @@ const work = defineCollection({
           alt: z.string(),
         })
         .optional(),
+      theme: z.enum(THEME_COLORS).optional(),
     }),
 });
 

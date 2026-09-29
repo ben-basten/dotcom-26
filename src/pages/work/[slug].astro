@@ -18,13 +18,15 @@ const { work } = Astro.props;
 const { Content } = await render(work);
 ---
 
-<BaseLayout color="pink">
+<BaseLayout color={work.data.theme ?? "pink"}>
   <SEO slot="seo" title={work.data.title} description={work.data.excerpt} />
   <article>
     <PostHero
       title={work.data.title}
       excerpt={work.data.excerpt}
       subtext={work.data.role}
+      image={work.data.hero?.image}
+      imageAlt={work.data.hero?.alt}
     />
     <ContentContainer class="relative z-2">
       <div class="mb-15 md:mb-20 markdown-content">

@@ -7,6 +7,7 @@ stack: ["Next.js", "Headless CMS", "Salesforce Pardot"]
 hero:
   image: "../../src/images/work/audible-business-macbook-2000-80.webp"
   alt: "Laptop showing the Audible for Business website"
+theme: mango
 ---
 
 Dolor ipsum Lorem minim esse eiusmod occaecat in pariatur duis enim non aute cupidatat. Tempor sunt in quis velit sunt eu exercitation. Ad dolor eu sit labore minim reprehenderit nostrud nisi commodo. Nostrud enim incididunt consequat deserunt pariatur ullamco exercitation ad. Ut commodo ipsum velit aute dolor sit dolore consectetur. Velit veniam ea sint esse mollit sunt magna aliqua aliqua laborum esse voluptate. Nisi id quis in eiusmod exercitation proident in ad in ullamco culpa ipsum sunt sint id. Nulla ad ad esse pariatur.
