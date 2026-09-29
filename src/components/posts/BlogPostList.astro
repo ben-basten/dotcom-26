@@ -1,0 +1,37 @@
+---
+import type { CollectionEntry } from "astro:content";
+import Heading from "~/components/base/Heading.astro";
+import { formatDate } from "~/utils/date.helpers";
+
+interface Props {
+  posts: CollectionEntry<"posts">[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="flex flex-col gap-y-8">
+  {
+    posts.map((post) => (
+      <li class="relative isolate grid grid-cols-1 sm:grid-cols-[minmax(0,1fr)_auto] items-center gap-x-6 gap-y-2 text-left after:absolute after:-inset-x-5 after:-inset-y-3 after:-z-10 after:rounded-lg after:content-[''] after:transition-colors hover:after:bg-theme-light">
+        <div class="flex flex-col gap-y-2">
+          <Heading as="h3" variant="h4">
+            <a
+              href={`/posts/${post.id}/`}
+              class="after:absolute after:-inset-x-5 after:-inset-y-3 after:z-10 after:rounded-lg after:content-[''] focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-foreground"
+            >
+              {post.data.title}
+            </a>
+          </Heading>
+          <p class="type-body max-w-prose">{post.data.excerpt}</p>
+        </div>
+        <time
+          datetime={post.data.date.toISOString().slice(0, 10)}
+          class="type-body font-semibold sm:text-end text-sm whitespace-nowrap"
+        >
+          {formatDate(post.data.date)}
+        </time>
+      </li>
+    ))
+  }
+</ul>
