@@ -2,9 +2,10 @@
 interface Props {
   as: "h1" | "h2" | "h3" | "h4" | "h5" | "h6" | "p";
   variant?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+  class?: string;
 }
 
-const { as, variant } = Astro.props as Props;
+const { as, variant, class: className } = Astro.props as Props;
 
 const headingVariant = variant ?? as;
 
@@ -23,6 +24,6 @@ const variantClasses = variantClassMap[headingVariant];
 const Tag = as;
 ---
 
-<Tag class={variantClasses}>
+<Tag class:list={[variantClasses, className]}>
   <slot />
 </Tag>
