@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import PostHero from "~/components/common/PostHero.astro";
+import SEO from "~/components/common/SEO.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+
+  return pages.map((page) => ({
+    params: { slug: page.id },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+---
+
+<BaseLayout color={page.data.theme}>
+  <SEO slot="seo" title={page.data.title} description={page.data.excerpt} />
+  <article>
+    <PostHero title={page.data.title} excerpt={page.data.excerpt} />
+    <ContentContainer class="relative z-2">
+      <div class="markdown-content">
+        <Content />
+      </div>
+    </ContentContainer>
+  </article>
+</BaseLayout>

@@ -16,6 +16,20 @@ const posts = defineCollection({
   }),
 });
 
+const pages = defineCollection({
+  type: "content_layer",
+  loader: glob({
+    base: "./content/pages",
+    pattern: "**/*.{md,mdx}",
+  }),
+  schema: () =>
+    z.object({
+      title: z.string(),
+      excerpt: z.string().optional(),
+      theme: z.enum(THEME_COLORS).default("periwinkle"),
+    }),
+});
+
 const work = defineCollection({
   type: "content_layer",
   loader: glob({
@@ -40,6 +54,7 @@ const work = defineCollection({
 });
 
 export const collections = {
+  pages,
   posts,
   work,
 };
