@@ -6,9 +6,11 @@ import { defineConfig, envField, fontProviders } from "astro/config";
 import { hastExternalLinks } from "./src/hast/hast-external-links";
 import { hastHeadingLinks } from "./src/hast/hast-heading-links";
 
+import vue from "@astrojs/vue";
+
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL,
-  integrations: [sitemap(), mdx()],
+  integrations: [sitemap(), mdx(), vue()],
   vite: {
     plugins: [tailwindcss()],
   },
