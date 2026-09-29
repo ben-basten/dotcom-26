@@ -15,10 +15,18 @@ const { title: heading, excerpt } = Astro.props;
     class="bg-theme relative h-250 max-h-[75dvh] w-full overflow-hidden rounded-xl"
   >
     <div
-      class="absolute inset-x-0 bottom-0 w-full bg-theme-dark py-6 ps-[calc(var(--spacing-side-mobile)-var(--spacing-inset))] md:ps-[calc(var(--spacing-side)-var(--spacing-inset))] min-[95rem]:ps-side pe-side-mobile md:pe-6 text-background md:top-2/3 md:-translate-y-1/2 md:bottom-auto md:w-3/5 md:rounded-tr-lg md:rounded-br-lg lg:w-2/5"
+      class="absolute inset-x-0 bottom-0 flex flex-col gap-3 w-full bg-theme-dark py-6 ps-[calc(var(--spacing-side-mobile)-var(--spacing-inset))] md:ps-[calc(var(--spacing-side)-var(--spacing-inset))] min-[95rem]:ps-side pe-side-mobile md:pe-6 text-background md:top-2/3 md:-translate-y-1/2 md:bottom-auto md:w-3/5 md:rounded-tr-lg md:rounded-br-lg lg:w-2/5"
     >
       <Heading as="h1">{heading}</Heading>
-      {excerpt && <p class="type-body mt-2">{excerpt}</p>}
+      {
+        Astro.slots.has("excerpt") ? (
+          <p>
+            <slot name="excerpt" />
+          </p>
+        ) : (
+          excerpt && <p>{excerpt}</p>
+        )
+      }
     </div>
   </section>
 </ContentContainer>

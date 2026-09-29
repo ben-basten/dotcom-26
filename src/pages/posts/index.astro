@@ -19,8 +19,19 @@ const postsByYear = posts.reduce((groups, post) => {
 ---
 
 <BaseLayout color="mango">
-  <SEO slot="seo" title="Blog" />
-  <MediaHero title="Blog" />
+  <SEO
+    slot="seo"
+    title="Blog"
+    description="My writing on topics ranging from self hosting, privacy, random dev learnings, and everything in between."
+  />
+  <MediaHero title="Blog">
+    <Fragment slot="excerpt">
+      Here you'll find my writing on topics from self hosting, privacy, random
+      dev learnings, and everything in between. Subscribe to the
+      <a href="/feed.xml" class="text-white hover:text-theme">RSS feed</a> to make
+      sure you don't miss new posts!
+    </Fragment>
+  </MediaHero>
   <ContentContainer as="section" class="pt-section-space">
     <div class="mx-auto max-w-200 flex flex-col gap-y-10">
       {
