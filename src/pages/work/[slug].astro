@@ -1,5 +1,6 @@
 ---
 import { getCollection, render } from "astro:content";
+import { getImage } from "astro:assets";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import PostHero from "~/components/common/PostHero.astro";
@@ -17,10 +18,25 @@ export async function getStaticPaths() {
 
 const { work } = Astro.props;
 const { Content } = await render(work);
+const ogImage = work.data.hero
+  ? await getImage({
+      src: work.data.hero.image,
+      width: 1200,
+      height: 630,
+      fit: "cover",
+      format: "jpeg",
+      quality: "low",
+    })
+  : undefined;
 ---
 
 <BaseLayout color={work.data.theme ?? "pink"}>
-  <SEO slot="seo" title={work.data.title} description={work.data.excerpt} />
+  <SEO
+    slot="seo"
+    title={work.data.title}
+    description={work.data.excerpt}
+    ogImage={ogImage && new URL(ogImage.src, Astro.site ?? Astro.url).href}
+  />
   <article>
     <PostHero
       title={work.data.title}
