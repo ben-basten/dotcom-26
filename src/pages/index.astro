@@ -17,8 +17,8 @@ const featuredWork = (await getCollection("work"))
 <BaseLayout color="green">
   <SEO slot="seo" title="Ben Basten" />
   <MediaHero title="Ben Basten" excerpt={TAGLINE} />
-  <ContentContainer as="section" class="py-14">
-    <div class="mx-auto max-w-250">
+  <ContentContainer as="section" class="mt-14">
+    <div class="mx-auto max-w-250 mb-section-space">
       <Heading as="h2" class="mb-8">Featured work</Heading>
       <WorkGrid entries={featuredWork} />
     </div>

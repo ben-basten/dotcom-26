@@ -13,7 +13,7 @@ const workEntries = (await getCollection("work")).sort(compareByDateDesc);
 <BaseLayout color="pink">
   <SEO slot="seo" title="Work" />
   <MediaHero title="My work" />
-  <ContentContainer as="section" class="mt-14">
+  <ContentContainer as="section" class="mt-section-space">
     <WorkGrid entries={workEntries} />
   </ContentContainer>
 </BaseLayout>

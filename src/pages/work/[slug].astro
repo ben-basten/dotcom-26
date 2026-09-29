@@ -31,7 +31,7 @@ const { Content } = await render(work);
     />
     <ContentContainer class="relative z-2">
       {work.data.stack.length > 0 && <Technologies stack={work.data.stack} />}
-      <div class="markdown-content mt-14">
+      <div class="markdown-content mt-section-space">
         <Content />
       </div>
     </ContentContainer>
