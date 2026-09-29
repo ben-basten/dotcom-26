@@ -1,0 +1,35 @@
+---
+import Heading from "~/components/base/Heading.astro";
+
+interface Props {
+  stack: string[];
+}
+
+const { stack } = Astro.props;
+---
+
+{
+  stack.length > 0 && (
+    <div
+      role="group"
+      aria-labelledby="technologies-heading"
+      class="relative mx-auto -mt-10 flex w-full max-w-250 flex-col gap-5 rounded-lg bg-theme-dark p-6 text-white shadow-lg sm:p-8 md:flex-row md:items-center md:gap-8"
+    >
+      <Heading
+        as="p"
+        variant="h4"
+        id="technologies-heading"
+        class="shrink-0 border-b border-theme-light/50 pb-4 md:border-e md:border-b-0 md:py-2 md:pe-8"
+      >
+        Technologies
+      </Heading>
+      <ul class="flex flex-wrap gap-2">
+        {stack.map((tech) => (
+          <li class="rounded-lg select-none border border-theme-light bg-white/10 px-3 py-1.5 text-sm font-medium text-white">
+            {tech}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}

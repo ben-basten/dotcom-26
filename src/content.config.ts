@@ -29,7 +29,6 @@ const work = defineCollection({
       date: z.coerce.date(),
       role: z.string().optional(),
       stack: z.array(z.string()).default([]),
-      demoUrl: z.url().optional(),
       hero: z
         .object({
           image: image(),
