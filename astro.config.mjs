@@ -25,5 +25,6 @@ export default defineConfig({
   redirects: {
     "/projects": "/work",
     "/projects/group-music-server": "/work",
+    "/archives": "/posts",
   },
 });
