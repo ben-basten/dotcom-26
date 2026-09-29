@@ -3,13 +3,15 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  robots?: string;
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage, robots } = Astro.props;
 const pageTitle = title === "Ben Basten" ? title : `${title} | Ben Basten`;
 ---
 
 <title>{pageTitle}</title>
+{robots && <meta name="robots" content={robots} />}
 <meta property="og:title" content={pageTitle} />
 {description && <meta name="description" content={description} />}
 {description && <meta property="og:description" content={description} />}

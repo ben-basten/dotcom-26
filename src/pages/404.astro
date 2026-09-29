@@ -1,0 +1,18 @@
+---
+import BaseLayout from "~/layouts/BaseLayout.astro";
+import Button from "~/components/base/Button.astro";
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import Heading from "~/components/base/Heading.astro";
+import SEO from "~/components/common/SEO.astro";
+---
+
+<BaseLayout>
+  <SEO slot="seo" title="Not found" robots="noindex, nofollow" />
+  <ContentContainer as="section" class="flex items-center mt-nav-height">
+    <div class="mx-auto max-w-150 text-center pt-14 md:pt-30">
+      <Heading as="h1" class="mb-4">Page not found</Heading>
+      <p class="mb-8">Ope! Sorry, the page you're looking for wasn't found.</p>
+      <Button href="/" size="md">Back to home</Button>
+    </div>
+  </ContentContainer>
+</BaseLayout>

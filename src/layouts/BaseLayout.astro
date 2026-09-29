@@ -6,7 +6,7 @@ import "~/styles/main.css";
 import { COLOR_CLASS, type ThemeColor } from "~/utils/colors.constants";
 
 interface Props {
-  color: ThemeColor;
+  color?: ThemeColor;
 }
 
 const { color = "pink" } = Astro.props;
