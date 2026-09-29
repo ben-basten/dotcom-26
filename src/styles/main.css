@@ -53,6 +53,7 @@
   --spacing-max-width: 90rem;
   --spacing-nav-bar: 3.5rem;
   --spacing-nav-height: calc(var(--spacing-nav-bar) + 2 * var(--spacing-inset));
+  --spacing-section-space: 3.5rem;
 }
 
 @theme inline {

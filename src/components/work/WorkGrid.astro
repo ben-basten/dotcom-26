@@ -1,0 +1,43 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import Heading from "~/components/base/Heading.astro";
+import { COLOR_CLASS } from "~/utils/colors.constants";
+
+interface Props {
+  entries: CollectionEntry<"work">[];
+}
+
+const { entries } = Astro.props;
+---
+
+<ul class="mx-auto max-w-250 grid gap-5 md:grid-cols-2">
+  {
+    entries.map((work) => (
+      <li class={COLOR_CLASS[work.data.theme ?? "pink"]}>
+        <a
+          href={`/work/${work.id}/`}
+          class="group flex h-full flex-col overflow-hidden rounded-xl bg-theme/20 text-foreground no-underline cursor-pointer"
+        >
+          <div class="overflow-hidden bg-theme/60">
+            {work.data.hero && (
+              <Image
+                src={work.data.hero.image}
+                alt={work.data.hero.alt}
+                class="aspect-3/2 w-full object-cover transition-transform duration-default"
+                widths={[300, 400, 500]}
+                sizes="(min-width: 64rem) 29rem, (min-width: 48rem) 45vw, 100vw"
+              />
+            )}
+          </div>
+          <div class="flex flex-1 flex-col gap-3 p-6 sm:p-8">
+            <Heading as="h2" variant="h3" class="group-hover:underline">
+              {work.data.title}
+            </Heading>
+            <p class="type-body">{work.data.excerpt}</p>
+          </div>
+        </a>
+      </li>
+    ))
+  }
+</ul>

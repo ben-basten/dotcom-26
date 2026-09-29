@@ -3,23 +3,13 @@ import Footer from "~/components/navigation/Footer.astro";
 import MainNavigation from "~/components/navigation/MainNavigation.astro";
 import { Font } from "astro:assets";
 import "~/styles/main.css";
-import type { THEME_COLORS } from "~/utils/copy.constants";
-
-type Color = (typeof THEME_COLORS)[number];
+import { COLOR_CLASS, type ThemeColor } from "~/utils/colors.constants";
 
 interface Props {
-  color: Color;
+  color: ThemeColor;
 }
 
 const { color = "pink" } = Astro.props;
-
-const colorClasses: Record<Color, string> = {
-  green: "[--color-theme:var(--color-theme-green)]",
-  periwinkle: "[--color-theme:var(--color-theme-periwinkle)]",
-  mango: "[--color-theme:var(--color-theme-mango)]",
-  blue: "[--color-theme:var(--color-theme-blue)]",
-  pink: "[--color-theme:var(--color-theme-pink)]",
-};
 ---
 
 <!doctype html>
@@ -39,7 +29,7 @@ const colorClasses: Record<Color, string> = {
     <meta name="generator" content={Astro.generator} />
     <slot name="seo" />
   </head>
-  <body class={colorClasses[color]}>
+  <body class={COLOR_CLASS[color]}>
     <div class="flex min-h-dvh flex-col">
       <MainNavigation />
       <main tabindex="-1" class="flex-1 outline-none isolate">

@@ -15,13 +15,13 @@ interface Props {
 const { title, excerpt, subtext, image, imageAlt = "" } = Astro.props;
 ---
 
-<section class="relative isolate w-full overflow-x-clip">
+<section class="relative isolate w-full overflow-x-clip mb-section-space">
   <div
     aria-hidden="true"
     class="post-hero-gradient absolute inset-x-0 top-0 -bottom-16 z-0 bg-linear-to-b from-theme to-background"
   >
   </div>
-  <ContentContainer class="mb-14">
+  <ContentContainer>
     <div
       class="[--spacing-hero-top:3rem] md:[--spacing-hero-top:6rem] relative z-2 mx-auto flex flex-col max-w-175 items-center gap-y-5 pt-[calc(var(--spacing-nav-height)+var(--spacing-hero-top))] text-center"
     >

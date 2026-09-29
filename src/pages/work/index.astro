@@ -4,6 +4,7 @@ import ContentContainer from "~/components/base/ContentContainer.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import MediaHero from "~/components/common/MediaHero.astro";
 import SEO from "~/components/common/SEO.astro";
+import WorkGrid from "~/components/work/WorkGrid.astro";
 import { compareByDateDesc } from "~/utils/date.helpers";
 
 const workEntries = (await getCollection("work")).sort(compareByDateDesc);
@@ -12,23 +13,7 @@ const workEntries = (await getCollection("work")).sort(compareByDateDesc);
 <BaseLayout color="pink">
   <SEO slot="seo" title="Work" />
   <MediaHero title="My work" />
-  <ContentContainer as="section">
-    <div class="pt-nav-height pb-12 space-y-4">
-      {
-        workEntries.length === 0 ? (
-          <p class="type-body">No work entries yet.</p>
-        ) : (
-          <ul class="space-y-2">
-            {workEntries.map((work) => (
-              <li>
-                <a href={`/work/${work.id}/`} class="underline">
-                  {work.data.title}
-                </a>
-              </li>
-            ))}
-          </ul>
-        )
-      }
-    </div>
+  <ContentContainer as="section" class="mt-section-space">
+    <WorkGrid entries={workEntries} />
   </ContentContainer>
 </BaseLayout>

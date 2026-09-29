@@ -1,26 +1,26 @@
 ---
+import { getCollection } from "astro:content";
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import Heading from "~/components/base/Heading.astro";
 import MediaHero from "~/components/common/MediaHero.astro";
 import SEO from "~/components/common/SEO.astro";
+import WorkGrid from "~/components/work/WorkGrid.astro";
 import { TAGLINE } from "~/utils/copy.constants";
+import { compareByDateDesc } from "~/utils/date.helpers";
+
+const featuredWork = (await getCollection("work"))
+  .sort(compareByDateDesc)
+  .slice(0, 2);
 ---
 
 <BaseLayout color="green">
   <SEO slot="seo" title="Ben Basten" />
   <MediaHero title="Ben Basten" excerpt={TAGLINE} />
-  <ContentContainer>
-    <div class="py-12 space-y-4">
-      <Heading as="h1">Mollit veniam laboris sit veniam commodo</Heading>
-      <Heading as="h2">Mollit veniam laboris sit veniam commodo</Heading>
-      <Heading as="h3">Mollit veniam laboris sit veniam commodo</Heading>
-      <Heading as="h4">Mollit veniam laboris sit veniam commodo</Heading>
-      <Heading as="h5">Mollit veniam laboris sit veniam commodo</Heading>
-      <Heading as="h6">Mollit veniam laboris sit veniam commodo</Heading>
-      <div>
-        <a href="https://www.kagi.com">Sample link</a>
-      </div>
+  <ContentContainer as="section" class="mt-14">
+    <div class="mx-auto max-w-250 mb-section-space">
+      <Heading as="h2" class="mb-8">Featured work</Heading>
+      <WorkGrid entries={featuredWork} />
     </div>
   </ContentContainer>
 </BaseLayout>
