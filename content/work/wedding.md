@@ -4,6 +4,9 @@ excerpt: "A fun dive into building my wedding website with CMS-driven content fo
 role: "Personal project"
 date: 2026-04-01
 stack: ["Nuxt", "Contentful", "Postgres", "Drizzle"]
+hero:
+  image: "../../src/images/work/wedding-2000-85.webp"
+  alt: "Laptop showing the wedding website"
 ---
 
 Consequat voluptate minim ipsum cillum consectetur magna. Occaecat anim sit dolore. Cillum nulla adipisicing esse incididunt eiusmod nisi velit aliqua laborum ullamco dolor velit irure dolor. Irure labore aute pariatur Lorem occaecat aliqua sunt mollit Lorem proident fugiat nostrud nisi. Sunt eiusmod ipsum reprehenderit incididunt deserunt mollit incididunt. Ad sint veniam esse proident ullamco cupidatat. Voluptate ut laboris culpa. Est laborum sint esse magna tempor est enim duis quis ullamco sit.
