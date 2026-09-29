@@ -3,8 +3,9 @@ import Footer from "~/components/navigation/Footer.astro";
 import MainNavigation from "~/components/navigation/MainNavigation.astro";
 import { Font } from "astro:assets";
 import "~/styles/main.css";
+import type { THEME_COLORS } from "~/utils/copy.constants";
 
-type Color = "green" | "periwinkle" | "mango" | "blue" | "pink";
+type Color = (typeof THEME_COLORS)[number];
 
 interface Props {
   color: Color;

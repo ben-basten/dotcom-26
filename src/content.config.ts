@@ -1,6 +1,7 @@
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 import { defineCollection } from "astro:content";
+import { THEME_COLORS } from "./utils/copy.constants";
 
 const posts = defineCollection({
   type: "content_layer",
@@ -21,14 +22,21 @@ const work = defineCollection({
     base: "./content/work",
     pattern: "**/*.{md,mdx}",
   }),
-  schema: z.object({
-    title: z.string(),
-    excerpt: z.string(),
-    date: z.coerce.date(),
-    role: z.string().optional(),
-    stack: z.array(z.string()).default([]),
-    demoUrl: z.url().optional(),
-  }),
+  schema: ({ image }) =>
+    z.object({
+      title: z.string(),
+      excerpt: z.string(),
+      date: z.coerce.date(),
+      role: z.string().optional(),
+      stack: z.array(z.string()).default([]),
+      hero: z
+        .object({
+          image: image(),
+          alt: z.string(),
+        })
+        .optional(),
+      theme: z.enum(THEME_COLORS).optional(),
+    }),
 });
 
 export const collections = {
