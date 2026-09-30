@@ -1,7 +1,9 @@
+import { satteri } from "@astrojs/markdown-satteri";
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
+import { hastExternalLinks } from "./src/hast/hast-external-links";
 
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL,
@@ -13,6 +15,9 @@ export default defineConfig({
     shikiConfig: {
       theme: "dark-plus",
     },
+    processor: satteri({
+      hastPlugins: [hastExternalLinks],
+    }),
   },
   fonts: [
     {
