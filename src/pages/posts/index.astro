@@ -5,7 +5,7 @@ import Heading from "~/components/base/Heading.astro";
 import MediaHero from "~/components/common/MediaHero.astro";
 import BlogPostList from "~/components/posts/BlogPostList.astro";
 import BaseLayout from "~/layouts/BaseLayout.astro";
-import SEO from "~/components/common/SEO.astro";
+import SEO from "~/components/base/SEO.astro";
 import { compareByDateDesc } from "~/utils/date.helpers";
 
 const posts = (await getCollection("posts")).sort(compareByDateDesc);
