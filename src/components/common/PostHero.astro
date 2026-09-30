@@ -32,7 +32,7 @@ const { title, excerpt, subtext, image, imageAlt = "" } = Astro.props;
       </div>
       <Heading as="h1">{title}</Heading>
       {excerpt && <p class="type-body max-w-120 mx-auto">{excerpt}</p>}
-      {subtext && <p class="type-body text-sm font-semibold">{subtext}</p>}
+      {subtext && <p class="type-caption">{subtext}</p>}
     </div>
     {
       image && (

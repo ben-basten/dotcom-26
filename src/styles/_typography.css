@@ -13,6 +13,9 @@
 @utility type-body {
   @apply text-base font-normal;
 }
+@utility type-caption {
+  @apply text-sm font-semibold;
+}
 
 @layer base {
   h1 {
