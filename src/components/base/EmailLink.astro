@@ -4,7 +4,7 @@ import { EMAIL } from "astro:env/client";
 
 {
   EMAIL && (
-    <div class="relative w-fit mr-12">
+    <span class="relative w-fit mr-12">
       <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
       <button
         type="button"
@@ -14,7 +14,7 @@ import { EMAIL } from "astro:env/client";
         Copy
       </button>
       <span class="sr-only" aria-live="polite" data-copy-status />
-    </div>
+    </span>
   )
 }
 
