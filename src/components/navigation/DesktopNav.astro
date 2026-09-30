@@ -12,7 +12,7 @@ const { links, ctaLink } = Astro.props;
 const currentPath = normalizePathname(Astro.url.pathname);
 ---
 
-<div class="hidden self-stretch gap-7.5 md:flex">
+<div class="pointer-events-auto hidden self-stretch gap-7.5 md:flex">
   <div class="flex h-full items-center gap-3.5">
     {
       links.map((link) => (
