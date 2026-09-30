@@ -1,0 +1,17 @@
+---
+import ArrowIcon from "~/components/svg/ArrowIcon.astro";
+
+interface Props {
+  class?: string;
+  href: string;
+}
+
+const { class: className, href } = Astro.props;
+---
+
+<a {href} class:list={["group flex gap-x-3.5 items-center w-fit", className]}>
+  <slot />
+  <ArrowIcon
+    class="group-hover:translate-x-2 transition-transform ease-snap duration-default"
+  />
+</a>
