@@ -2,7 +2,7 @@
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import DesktopNav from "./DesktopNav.astro";
 import Logo from "./Logo.astro";
-import MobileNav from "./MobileNav.astro";
+import MobileNav from "./MobileNav.vue";
 import type { NavLink } from "~/types/NavLink";
 import { normalizePathname } from "~/utils/url.helpers";
 
@@ -20,7 +20,12 @@ const currentPath = normalizePathname(Astro.url.pathname);
     <div class="flex justify-between items-center h-nav-bar">
       <Logo expanded={currentPath !== "/"} />
       <DesktopNav links={links} ctaLink={ctaLink} />
-      <MobileNav links={links} ctaLink={ctaLink} />
+      <MobileNav
+        client:load
+        links={links}
+        ctaLink={ctaLink}
+        currentPath={normalizePathname(Astro.url.pathname)}
+      />
     </div>
   </ContentContainer>
 </nav>
