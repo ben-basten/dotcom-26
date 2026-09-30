@@ -1,5 +1,95 @@
-<footer class="mt-15 md:mt-30">
-  <ul>
-    <li class="text-center">Footer Navigation</li>
-  </ul>
+---
+import Heading from "~/components/base/Heading.astro";
+import EmailLink from "~/components/base/EmailLink.astro";
+
+import {
+  LINKEDIN_URL,
+  GITHUB_URL,
+  EMAIL,
+  COMMIT_REF,
+  REPOSITORY_URL,
+} from "astro:env/client";
+
+const commitUrl = `${REPOSITORY_URL.replace(/\/$/, "").replace(/\.git$/, "")}/commit/${COMMIT_REF}`;
+---
+
+<footer class="footer-surface py-10 px-side-mobile md:px-side">
+  <div
+    class="mx-auto w-fit max-w-150 p-6 bg-background rounded-lg border-2 border-theme/40 grid sm:grid-cols-[auto_auto] md:grid-cols-[auto_auto_auto] gap-x-20 gap-y-10"
+  >
+    <p class="text-center col-span-full">Made with ❤️ by Ben</p>
+    <section>
+      <Heading as="h2" variant="h5" class="mb-3">Links</Heading>
+      <ul class="flex flex-col gap-y-1" aria-label="Social links">
+        <li>
+          <a href="/feed.xml" target="_blank">RSS feed</a>
+        </li>
+        {
+          LINKEDIN_URL && (
+            <li>
+              <a href={LINKEDIN_URL} target="_blank">
+                LinkedIn
+              </a>
+            </li>
+          )
+        }
+        {
+          GITHUB_URL && (
+            <li>
+              <a href={GITHUB_URL} target="_blank">
+                GitHub
+              </a>
+            </li>
+          )
+        }
+      </ul>
+    </section>
+    <section>
+      <Heading as="h2" variant="h5" class="mb-3" id="footer-metadata-heading">
+        Metadata
+      </Heading>
+      <dl class="flex flex-col gap-y-1">
+        <div class="flex flex-col gap-x-2">
+          <dt class="font-semibold">Source</dt>
+          <dd><a href={REPOSITORY_URL} target="_blank">dotcom-26</a></dd>
+        </div>
+        <div class="flex flex-col gap-x-2">
+          <dt class="font-semibold">Commit</dt>
+          <dd>
+            <a href={commitUrl} target="_blank">{COMMIT_REF.substring(0, 7)}</a>
+          </dd>
+        </div>
+      </dl>
+    </section>
+    {
+      EMAIL && (
+        <section class="max-md:col-span-full">
+          <Heading as="h2" variant="h5" class="mb-3">
+            Still here?
+          </Heading>
+          <p>Contact me at</p>
+          <EmailLink />
+        </section>
+      )
+    }
+  </div>
 </footer>
+
+<style>
+  .footer-surface {
+    background-color: var(--color-background);
+    background-image:
+      linear-gradient(
+        to right,
+        color-mix(in srgb, var(--color-foreground) 12%, transparent) 1px,
+        transparent 1px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--color-foreground) 12%, transparent) 1px,
+        transparent 1px
+      );
+    background-size: 24px 24px;
+    box-shadow: 0 -4px 12px rgb(19 21 19 / 8%);
+  }
+</style>

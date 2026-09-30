@@ -1,0 +1,40 @@
+---
+import { EMAIL } from "astro:env/client";
+---
+
+{
+  EMAIL && (
+    <div class="relative w-fit mr-12">
+      <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+      <button
+        type="button"
+        class="copy-email absolute translate-x-full -translate-y-1/2 top-1/2 -right-2 rounded-lg bg-primary hover:bg-primary/90 px-3 py-1 text-sm font-medium text-white"
+        data-copy-email={EMAIL}
+      >
+        Copy
+      </button>
+      <span class="sr-only" aria-live="polite" data-copy-status />
+    </div>
+  )
+}
+
+<script>
+  document
+    .querySelectorAll<HTMLButtonElement>(".copy-email")
+    .forEach((button) => {
+      button.addEventListener("click", async () => {
+        const email = button.dataset.copyEmail;
+        if (!email) return;
+
+        await navigator.clipboard.writeText(email);
+        button.textContent = "Copied!";
+        button
+          .closest("div")
+          ?.querySelector("[data-copy-status]")
+          ?.replaceChildren("Email copied to clipboard.");
+        window.setTimeout(() => {
+          button.textContent = "Copy";
+        }, 2000);
+      });
+    });
+</script>

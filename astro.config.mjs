@@ -1,7 +1,7 @@
 import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig, fontProviders } from "astro/config";
+import { defineConfig, envField, fontProviders } from "astro/config";
 
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL,
@@ -22,6 +22,31 @@ export default defineConfig({
       weights: [400, 500, 600, 700, 800],
     },
   ],
+  env: {
+    schema: {
+      DEPLOY_PRIME_URL: envField.string({
+        context: "server",
+        access: "secret",
+      }),
+      EMAIL: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      GITHUB_URL: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      LINKEDIN_URL: envField.string({
+        context: "client",
+        access: "public",
+        optional: true,
+      }),
+      COMMIT_REF: envField.string({ context: "client", access: "public" }),
+      REPOSITORY_URL: envField.string({ context: "client", access: "public" }),
+    },
+  },
   redirects: {
     "/projects": "/work",
     "/projects/group-music-server": "/work",
