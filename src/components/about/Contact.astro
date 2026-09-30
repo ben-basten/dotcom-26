@@ -1,0 +1,32 @@
+---
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import Heading from "~/components/base/Heading.astro";
+import EmailLink from "~/components/base/EmailLink.astro";
+import { EMAIL, LINKEDIN_URL } from "astro:env/client";
+import Link from "../base/Link.astro";
+---
+
+<ContentContainer
+  as="section"
+  class="text-center flex flex-col gap-3 justify-center mt-section-space"
+>
+  <Heading as="h2" variant="h1" class="mb-3">Let's get in touch!</Heading>
+  <p class="max-w-prose mx-auto">
+    I'd love to hear from you, whether it's to chat more about a blog post or to
+    get connected. I'm also currently seeking new opportunities!
+  </p>
+  {
+    EMAIL && (
+      <p>
+        You can email me at <EmailLink />
+      </p>
+    )
+  }
+  {
+    LINKEDIN_URL && (
+      <p>
+        ...or reach out to me on <Link href={LINKEDIN_URL}>LinkedIn</Link>
+      </p>
+    )
+  }
+</ContentContainer>
