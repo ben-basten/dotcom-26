@@ -1,0 +1,32 @@
+---
+import { Image } from "astro:assets";
+import Heading from "~/components/base/Heading.astro";
+import silhouette from "~/images/about/silhouette.webp";
+
+interface Props {
+  class?: string;
+}
+
+const { class: className } = Astro.props;
+---
+
+<div
+  class:list={["grid items-center gap-8 md:grid-cols-2 md:gap-12", className]}
+>
+  <div>
+    <Heading as="h2" class="mb-4">Who I am</Heading>
+    <p class="type-body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+  </div>
+  <Image
+    src={silhouette}
+    alt="Silhouette standing in a snowy field at dusk"
+    class="aspect-4/3 w-full rounded-xl object-cover"
+    widths={[400, 640, 800, 1200]}
+    sizes="(min-width: 64rem) 30rem, (min-width: 48rem) 50vw, 100vw"
+  />
+</div>

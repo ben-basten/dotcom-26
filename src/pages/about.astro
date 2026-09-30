@@ -2,6 +2,8 @@
 import BaseLayout from "~/layouts/BaseLayout.astro";
 import MediaHero from "~/components/common/MediaHero.astro";
 import SEO from "~/components/base/SEO.astro";
+import ContentContainer from "~/components/base/ContentContainer.astro";
+import FiftyFifty from "~/components/about/FiftyFifty.astro";
 
 const pageTitle = "About me";
 ---
@@ -9,4 +11,7 @@ const pageTitle = "About me";
 <BaseLayout color="blue">
   <SEO slot="seo" title={pageTitle} />
   <MediaHero title={pageTitle} />
+  <ContentContainer class="mt-section-space">
+    <FiftyFifty class="max-w-250 mx-auto" />
+  </ContentContainer>
 </BaseLayout>
