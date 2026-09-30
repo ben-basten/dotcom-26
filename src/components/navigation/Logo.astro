@@ -1,3 +1,11 @@
+---
+interface Props {
+  expanded?: boolean;
+}
+
+const { expanded = true } = Astro.props;
+---
+
 <a
   href="/"
   aria-current={Astro.url.pathname === "/" ? "page" : undefined}
@@ -5,6 +13,13 @@
     "relative isolate no-underline font-extrabold rounded-lg text-3xl xl:text-5xl text-foreground",
     "after:absolute after:z-0 after:bg-background after:-inset-x-2 after:-inset-y-1 after:rounded-lg after:border-3 after:border-theme-dark hover:after:bg-theme-light after:transition-colors after:duration-default after:ease-in focus-visible:outline-none focus-visible:after:outline-2 focus-visible:after:outline-offset-2 focus-visible:after:outline-foreground",
   ]}
+  aria-label="Ben Basten"
+  title="Ben Basten"
 >
-  <span class="relative z-5">Ben Basten</span>
+  <span class="relative z-5">
+    B
+    <span class:list={{ hidden: !expanded }}>en </span>
+    B
+    <span class:list={{ hidden: !expanded }}>asten</span>
+  </span>
 </a>

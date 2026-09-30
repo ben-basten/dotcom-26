@@ -4,18 +4,21 @@ import DesktopNav from "./DesktopNav.astro";
 import Logo from "./Logo.astro";
 import MobileNav from "./MobileNav.astro";
 import type { NavLink } from "~/types/NavLink";
+import { normalizePathname } from "~/utils/url.helpers";
 
 const links: NavLink[] = [
   { text: "Work", href: "/work" },
   { text: "Blog", href: "/posts" },
 ];
 const ctaLink: NavLink = { text: "About", href: "/about" };
+
+const currentPath = normalizePathname(Astro.url.pathname);
 ---
 
 <nav class="fixed top-inset w-full z-1000">
   <ContentContainer class="mt-inset">
     <div class="flex justify-between items-center h-nav-bar">
-      <Logo />
+      <Logo expanded={currentPath !== "/"} />
       <DesktopNav links={links} ctaLink={ctaLink} />
       <MobileNav links={links} ctaLink={ctaLink} />
     </div>
