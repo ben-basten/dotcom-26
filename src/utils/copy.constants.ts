@@ -1,2 +1,2 @@
 export const TAGLINE =
-  "A full stack developer with a passion for accessibility, sustainable open source software, and collaboration.";
+  "Full stack developer with a passion for accessibility, sustainable open source software, and collaboration.";
