@@ -1,6 +1,7 @@
 ---
 import Heading from "~/components/base/Heading.astro";
 import EmailLink from "~/components/base/EmailLink.astro";
+import Link from "~/components/base/Link.astro";
 
 import {
   LINKEDIN_URL,
@@ -30,18 +31,18 @@ const commitUrl = `${REPOSITORY_URL.replace(/\/$/, "").replace(/\.git$/, "")}/co
         {
           LINKEDIN_URL && (
             <li>
-              <a href={LINKEDIN_URL} target="_blank">
+              <Link href={LINKEDIN_URL} newTab>
                 LinkedIn
-              </a>
+              </Link>
             </li>
           )
         }
         {
           GITHUB_URL && (
             <li>
-              <a href={GITHUB_URL} target="_blank">
+              <Link href={GITHUB_URL} newTab>
                 GitHub
-              </a>
+              </Link>
             </li>
           )
         }
@@ -54,12 +55,12 @@ const commitUrl = `${REPOSITORY_URL.replace(/\/$/, "").replace(/\.git$/, "")}/co
       <dl class="flex flex-col gap-y-1">
         <div class="flex flex-col gap-x-2">
           <dt class="font-semibold">Source</dt>
-          <dd><a href={REPOSITORY_URL} target="_blank">dotcom-26</a></dd>
+          <dd><Link href={REPOSITORY_URL} newTab>dotcom-26</Link></dd>
         </div>
         <div class="flex flex-col gap-x-2">
           <dt class="font-semibold">Commit</dt>
           <dd>
-            <a href={commitUrl} target="_blank">{COMMIT_REF.substring(0, 7)}</a>
+            <Link href={commitUrl} newTab>{COMMIT_REF.substring(0, 7)}</Link>
           </dd>
         </div>
       </dl>

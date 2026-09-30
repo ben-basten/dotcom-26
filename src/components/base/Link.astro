@@ -1,0 +1,22 @@
+---
+import ExternalIcon from "~/components/svg/ExternalIcon.astro";
+
+interface Props {
+  class?: string;
+  href: string;
+  newTab?: boolean;
+}
+
+const { class: className, href, newTab = false } = Astro.props;
+---
+
+<a
+  {href}
+  target={newTab ? "_blank" : undefined}
+  rel={newTab ? "noopener noreferrer" : undefined}
+  aria-description={newTab ? "Opens in new tab" : undefined}
+  class={className}
+>
+  <slot />
+  <ExternalIcon class="ms-1 inline-block align-baseline" />
+</a>
