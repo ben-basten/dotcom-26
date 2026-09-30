@@ -4,6 +4,7 @@ import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
 import { hastExternalLinks } from "./src/hast/hast-external-links";
+import { hastHeadingLinks } from "./src/hast/hast-heading-links";
 
 export default defineConfig({
   site: process.env.DEPLOY_PRIME_URL,
@@ -16,7 +17,7 @@ export default defineConfig({
       theme: "dark-plus",
     },
     processor: satteri({
-      hastPlugins: [hastExternalLinks],
+      hastPlugins: [hastExternalLinks, hastHeadingLinks],
     }),
   },
   fonts: [
