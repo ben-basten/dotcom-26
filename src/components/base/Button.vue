@@ -14,13 +14,9 @@ const sizeClass = computed(() =>
 <template>
   <a
     :href="href"
-    class="group no-underline inline-flex self-center rounded-lg text-white font-semibold shadow-[0.25rem_0.25rem_0_var(--color-foreground)] outline-offset-6"
+    class="no-underline inline-flex self-center items-center rounded-lg bg-primary text-white font-semibold shadow-[0.25rem_0.25rem_0_var(--color-foreground)] outline-offset-6 motion-safe:transition-[translate,box-shadow] motion-safe:duration-default motion-safe:ease-out motion-safe:hover:translate-x-1 motion-safe:hover:translate-y-1 motion-safe:hover:shadow-none motion-safe:active:translate-x-1 motion-safe:active:translate-y-1 motion-safe:active:shadow-none"
+    :class="sizeClass"
   >
-    <span
-      class="flex items-center rounded-lg bg-primary motion-safe:transition-transform group-active:translate-x-1 group-hover:translate-x-1 group-active:translate-y-1 group-hover:translate-y-1 ease-out"
-      :class="sizeClass"
-    >
-      <slot />
-    </span>
+    <slot />
   </a>
 </template>
