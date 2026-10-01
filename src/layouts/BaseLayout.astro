@@ -1,9 +1,11 @@
 ---
 import Footer from "~/components/navigation/Footer.astro";
 import MainNavigation from "~/components/navigation/MainNavigation.astro";
+import SkipLink from "~/components/navigation/SkipLink.astro";
 import { Font } from "astro:assets";
 import "~/styles/main.css";
 import { COLOR_CLASS, type ThemeColor } from "~/utils/colors.constants";
+import { MAIN_ID } from "~/utils/copy.constants";
 
 interface Props {
   color?: ThemeColor;
@@ -33,8 +35,10 @@ const { color = "pink" } = Astro.props;
     <div
       class="relative z-10 flex min-h-dvh flex-col shadow-[0_4px_12px_rgb(19_21_19/8%)]"
     >
+      <SkipLink />
       <MainNavigation />
       <main
+        id={MAIN_ID}
         tabindex="-1"
         class="pb-15 flex-1 bg-background outline-none isolate md:pb-30"
       >
