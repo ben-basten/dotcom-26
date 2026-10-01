@@ -19,7 +19,7 @@ const recentPosts = (await getCollection("posts"))
   .slice(0, 3);
 ---
 
-<BaseLayout color="green">
+<BaseLayout color="green" preloadHeroIcons>
   <SEO slot="seo" title="Ben Basten" description={TAGLINE} />
   <MediaHero title="Ben Basten" excerpt={TAGLINE} />
   <ContentContainer
