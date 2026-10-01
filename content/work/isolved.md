@@ -1,7 +1,7 @@
 ---
 title: "isolved"
 excerpt: "Building a new landing page to increase conversions, improve SEO, and scale for their increasing content needs."
-role: "Technical lead"
+role: "Technical Lead"
 date: 2026-01-01
 stack:
   [
@@ -14,6 +14,8 @@ stack:
 hero:
   image: "../../src/images/work/isolved-macbook-2000-85.webp"
   alt: "Laptop showing the isolved website"
+demo:
+  url: https://www.isolvedhcm.com/
 theme: pink
 ---
 

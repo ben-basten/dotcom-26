@@ -6,6 +6,7 @@ import ContentContainer from "~/components/base/ContentContainer.astro";
 import PostHero from "~/components/common/PostHero.astro";
 import SEO from "~/components/base/SEO.astro";
 import Technologies from "~/components/work/Technologies.astro";
+import Link from "~/components/base/Link.astro";
 
 export async function getStaticPaths() {
   const workEntries = await getCollection("work");
@@ -49,6 +50,15 @@ const ogImage = work.data.hero
       {work.data.stack.length > 0 && <Technologies stack={work.data.stack} />}
       <div class="markdown-content mt-section-space">
         <Content />
+        {
+          work.data.demo && (
+            <div class="mt-6 text-lg">
+              <Link href={work.data.demo.url} newTab>
+                Visit site
+              </Link>
+            </div>
+          )
+        }
       </div>
     </ContentContainer>
   </article>

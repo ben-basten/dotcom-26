@@ -1,12 +1,14 @@
 ---
 title: "Audible for Business"
 excerpt: "Driving sales for Audible's new bulk purchasing program, while empowering authors to easily create or update content."
-role: "Technical lead"
+role: "Technical Lead"
 date: 2026-09-01
 stack: ["Next.js", "Headless CMS", "Salesforce Pardot"]
 hero:
   image: "../../src/images/work/audible-business-macbook-2000-80.webp"
   alt: "Laptop showing the Audible for Business website"
+demo:
+  url: https://www.audible.com/business
 theme: mango
 ---
 
