@@ -22,7 +22,7 @@ I embarked on building this wedding website with some foundational goals in mind
 
 ## Design system
 
-My north star for designing the site was making sure that it's usable and functional for everyone that needs to use it. This means prioritizing the mobile site design, making sure that buttons have large click targets, and making sure that text always has sufficient size and contrast.
+My north star for designing the site was making sure that it's usable and functional for everyone that needs to use it. This means prioritizing the mobile site design, buttons have large click targets, and checking that text always has sufficient size and contrast.
 
 The site uses a warm white background with a serif font to make the site feel formal, while still maintaining easy legibility. I avoided cursive scripts - I tend to find them harder to read, despite their traditional look.
 
