@@ -33,7 +33,7 @@ const recentPosts = (await getCollection("posts"))
     </section>
     <section class="max-w-200">
       <Heading as="h2" class="mb-8">Featured work</Heading>
-      <WorkGrid entries={featuredWork} />
+      <WorkGrid entries={featuredWork} headingLevel="h3" />
       <ArrowLink href="/work" class="mt-7.5 mx-auto">View all work</ArrowLink>
     </section>
   </ContentContainer>

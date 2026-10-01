@@ -6,9 +6,10 @@ import { COLOR_CLASS } from "~/utils/colors.constants";
 
 interface Props {
   entries: CollectionEntry<"work">[];
+  headingLevel?: "h2" | "h3";
 }
 
-const { entries } = Astro.props;
+const { entries, headingLevel = "h2" } = Astro.props;
 ---
 
 <ul class="mx-auto max-w-250 grid gap-5 md:grid-cols-2">
@@ -31,7 +32,11 @@ const { entries } = Astro.props;
             )}
           </div>
           <div class="flex flex-1 flex-col gap-3 p-6 sm:p-8">
-            <Heading as="h2" variant="h3" class="group-hover:underline">
+            <Heading
+              as={headingLevel}
+              variant="h3"
+              class="group-hover:underline"
+            >
               {work.data.title}
             </Heading>
             <p class="type-body">{work.data.excerpt}</p>
