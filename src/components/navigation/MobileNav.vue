@@ -93,26 +93,29 @@ onUnmounted(() => {
       :id="menuId"
       :aria-hidden="!isOpen"
       :inert="!isOpen"
-      class="menu-panel fixed inset-x-inset top-inset z-20 mx-auto flex max-h-[calc(100dvh-2*var(--spacing-inset))] max-w-max-width flex-col items-center gap-5 overflow-y-auto rounded-xl bg-background px-6 pb-6 pt-23 shadow-lg min-[95rem]:inset-x-0"
+      class="menu-panel fixed inset-x-inset top-inset z-20 mx-auto flex max-h-[calc(100dvh-2*var(--spacing-inset))] max-w-max-width flex-col items-center overflow-y-auto rounded-xl bg-background px-6 pb-6 pt-23 shadow-lg min-[95rem]:inset-x-0"
       :class="{ 'is-open': isOpen, 'pointer-events-none': !isOpen }"
     >
-      <a
-        v-for="link in links"
-        :key="link.href"
-        :href="link.href"
-        :aria-current="currentPath === link.href ? 'page' : undefined"
-        class="text-4xl transition-[rotate,scale,color] duration-default ease-snap no-underline font-bold text-foreground hover:nav-active hover:text-theme-dark aria-[current=page]:nav-active aria-[current=page]:underline"
-      >
-        {{ link.text }}
-      </a>
-      <Button
-        :href="ctaLink.href"
-        size="lg"
-        :aria-current="currentPath === ctaLink.href ? 'page' : undefined"
-        class="mt-5"
-      >
-        {{ ctaLink.text }}
-      </Button>
+      <ul class="flex flex-col items-center gap-5 list-none">
+        <li v-for="link in links" :key="link.href" class="flex items-center">
+          <a
+            :href="link.href"
+            :aria-current="currentPath === link.href ? 'page' : undefined"
+            class="text-4xl transition-[rotate,scale,color] duration-default ease-snap no-underline font-bold text-foreground hover:nav-active hover:text-theme-dark aria-[current=page]:nav-active aria-[current=page]:underline"
+          >
+            {{ link.text }}
+          </a>
+        </li>
+        <li class="mt-5">
+          <Button
+            :href="ctaLink.href"
+            size="lg"
+            :aria-current="currentPath === ctaLink.href ? 'page' : undefined"
+          >
+            {{ ctaLink.text }}
+          </Button>
+        </li>
+      </ul>
     </div>
   </div>
 </template>

@@ -12,10 +12,12 @@ const { links, ctaLink } = Astro.props;
 const currentPath = normalizePathname(Astro.url.pathname);
 ---
 
-<div class="pointer-events-auto hidden self-stretch gap-7.5 md:flex">
-  <div class="flex h-full items-center gap-3.5">
-    {
-      links.map((link) => (
+<ul
+  class="pointer-events-auto hidden self-stretch items-center gap-3.5 list-none md:flex"
+>
+  {
+    links.map((link) => (
+      <li class="flex items-center">
         <a
           href={link.href}
           aria-current={currentPath === link.href ? "page" : undefined}
@@ -27,15 +29,17 @@ const currentPath = normalizePathname(Astro.url.pathname);
         >
           {link.text}
         </a>
-      ))
-    }
-  </div>
-  <Button
-    href={ctaLink.href}
-    size="md"
-    aria-current={currentPath === ctaLink.href ? "page" : undefined}
-    class="h-full"
-  >
-    {ctaLink.text}
-  </Button>
-</div>
+      </li>
+    ))
+  }
+  <li class="ml-4 flex h-full">
+    <Button
+      href={ctaLink.href}
+      size="md"
+      aria-current={currentPath === ctaLink.href ? "page" : undefined}
+      class="h-full"
+    >
+      {ctaLink.text}
+    </Button>
+  </li>
+</ul>
