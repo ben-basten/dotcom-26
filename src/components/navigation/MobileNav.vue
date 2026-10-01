@@ -113,7 +113,7 @@ onUnmounted(() => {
           <a
             :href="link.href"
             :aria-current="currentPath === link.href ? 'page' : undefined"
-            class="text-4xl transition-[rotate,scale,color] duration-default ease-snap no-underline font-bold text-foreground hover:nav-active hover:text-theme-dark aria-[current=page]:nav-active aria-[current=page]:underline"
+            class="text-4xl nav-current motion-safe:transition-[rotate,scale,color] duration-default ease-snap no-underline font-bold text-foreground hover:nav-active hover:text-theme-dark aria-[current=page]:nav-active aria-[current=page]:underline"
           >
             {{ link.text }}
           </a>

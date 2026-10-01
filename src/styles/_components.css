@@ -1,5 +1,9 @@
 @utility nav-active {
-  @apply scale-125 -rotate-10;
+  @apply motion-safe:scale-125 motion-safe:-rotate-10;
+}
+
+@utility nav-current {
+  @apply aria-[current="page"]:scale-125 aria-[current="page"]:-rotate-10;
 }
 
 @utility markdown-content {
