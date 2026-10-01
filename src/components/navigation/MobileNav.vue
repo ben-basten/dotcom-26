@@ -84,8 +84,20 @@ onUnmounted(() => {
         aria-hidden="true"
         :class="{ 'is-open': isOpen }"
       >
-        <path class="hamburger-top" d="M2.5 2.5H18.5" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
-        <path class="hamburger-bottom" d="M2.5 12.5H18.5" stroke="currentColor" stroke-width="5" stroke-linecap="round" />
+        <path
+          class="hamburger-top"
+          d="M2.5 2.5H18.5"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
+        <path
+          class="hamburger-bottom"
+          d="M2.5 12.5H18.5"
+          stroke="currentColor"
+          stroke-width="5"
+          stroke-linecap="round"
+        />
       </svg>
     </button>
     <button
