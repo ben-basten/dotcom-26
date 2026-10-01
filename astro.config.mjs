@@ -30,6 +30,10 @@ export default defineConfig({
       weights: [400, 500, 600, 700, 800],
     },
   ],
+  image: {
+    breakpoints: [400, 640, 750, 828, 1080, 1280],
+    layout: "constrained",
+  },
   env: {
     schema: {
       DEPLOY_PRIME_URL: envField.string({
