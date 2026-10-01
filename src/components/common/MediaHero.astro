@@ -1,6 +1,7 @@
 ---
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import Heading from "~/components/base/Heading.astro";
+import iconsBackground from "~/images/icons.svg?url";
 
 interface Props {
   title: string;
@@ -12,8 +13,14 @@ const { title: heading, excerpt } = Astro.props;
 
 <ContentContainer width="wide" class="pt-inset">
   <section
-    class="bg-theme relative h-180 max-h-130 md:max-h-[min(90dvh,45rem)] w-full overflow-hidden rounded-xl"
+    class="bg-theme relative h-180 max-h-[min(90dvh,720px)] w-full overflow-hidden rounded-xl"
   >
+    <div
+      aria-hidden="true"
+      class="hero-icons absolute inset-0 text-red"
+      style={{ backgroundImage: `url(${iconsBackground})` }}
+    >
+    </div>
     <div
       class="absolute inset-x-0 bottom-0 flex flex-col gap-3 w-full bg-theme-dark py-6 ps-[calc(var(--spacing-side-mobile)-var(--spacing-inset))] md:ps-[calc(var(--spacing-side)-var(--spacing-inset))] min-[95rem]:ps-side pe-side-mobile md:pe-6 text-background md:top-2/3 md:-translate-y-1/2 md:bottom-auto md:w-3/5 md:rounded-tr-lg md:rounded-br-lg lg:w-2/5"
     >
@@ -30,3 +37,12 @@ const { title: heading, excerpt } = Astro.props;
     </div>
   </section>
 </ContentContainer>
+
+<style>
+  .hero-icons {
+    background-repeat: repeat;
+    background-size: 15rem auto;
+    background-position: -1.25rem -1.25rem;
+    opacity: 0.15;
+  }
+</style>
