@@ -19,6 +19,7 @@ watch(
   isOpen,
   (open) => {
     document.documentElement.classList.toggle("overflow-hidden", open);
+    navigation?.toggleAttribute("data-mobile-menu-open", open);
     if (open) menuList.value?.focus();
   },
   { flush: "post" },
@@ -58,6 +59,7 @@ onMounted(() => {
 onUnmounted(() => {
   desktopMedia?.removeEventListener("change", closeOnDesktop);
   navigation?.removeEventListener("focusout", closeOnFocusOut);
+  navigation?.removeAttribute("data-mobile-menu-open");
   document.documentElement.classList.remove("overflow-hidden");
 });
 </script>
