@@ -3,15 +3,17 @@ import Footer from "~/components/navigation/Footer.astro";
 import MainNavigation from "~/components/navigation/MainNavigation.astro";
 import SkipLink from "~/components/navigation/SkipLink.astro";
 import { Font } from "astro:assets";
+import iconsBackground from "~/images/icons.svg?url";
 import "~/styles/main.css";
 import { COLOR_CLASS, type ThemeColor } from "~/utils/colors.constants";
 import { MAIN_ID } from "~/utils/copy.constants";
 
 interface Props {
   color?: ThemeColor;
+  preloadHeroIcons?: boolean;
 }
 
-const { color = "pink" } = Astro.props;
+const { color = "pink", preloadHeroIcons = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -19,6 +21,16 @@ const { color = "pink" } = Astro.props;
   <head>
     <Font cssVariable="--font-asap" />
     <meta charset="utf-8" />
+    {
+      preloadHeroIcons && (
+        <link
+          rel="preload"
+          as="image"
+          href={iconsBackground}
+          type="image/svg+xml"
+        />
+      )
+    }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="icon" href="/favicon.png" />
     <link
