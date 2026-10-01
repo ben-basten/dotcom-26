@@ -1,6 +1,7 @@
 ---
 title: Books
 excerpt: What I've been reading recently 📚
+theme: blue
 ---
 
 ## 2026

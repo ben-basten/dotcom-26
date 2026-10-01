@@ -26,7 +26,7 @@ const pages = defineCollection({
     z.object({
       title: z.string(),
       excerpt: z.string().optional(),
-      theme: z.enum(THEME_COLORS).default("periwinkle"),
+      theme: z.enum(THEME_COLORS).default("pink"),
     }),
 });
 
