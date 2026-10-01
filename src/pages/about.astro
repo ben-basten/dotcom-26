@@ -5,12 +5,13 @@ import SEO from "~/components/base/SEO.astro";
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import FiftyFifty from "~/components/about/FiftyFifty.astro";
 import Contact from "~/components/about/Contact.astro";
+import { TAGLINE } from "~/utils/copy.constants";
 
 const pageTitle = "About me";
 ---
 
 <BaseLayout color="periwinkle">
-  <SEO slot="seo" title={pageTitle} />
+  <SEO slot="seo" title={pageTitle} description={TAGLINE} />
   <MediaHero title={pageTitle} />
   <ContentContainer class="mt-section-space">
     <FiftyFifty class="max-w-250 mx-auto" />

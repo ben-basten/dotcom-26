@@ -49,6 +49,12 @@ const work = defineCollection({
           alt: z.string(),
         })
         .optional(),
+      demo: z
+        .object({
+          url: z.url(),
+          instructions: z.string().optional(),
+        })
+        .optional(),
       theme: z.enum(THEME_COLORS).optional(),
     }),
 });

@@ -7,5 +7,5 @@
 }
 
 @utility markdown-content {
-  @apply max-w-article text-wrap mx-auto *:mb-4 *:last:mb-0 *:first:mt-0 [&_h1,h2,h3,h4,h5,h6]:mt-7.5 [&_code]:wrap-break-word [&_pre]:rounded-lg [&_pre]:px-2 [&_pre]:py-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_blockquote]:rounded-lg [&_blockquote]:border-l-4 [&_blockquote]:border-theme-dark [&_blockquote]:bg-theme-light [&_blockquote]:py-3 [&_blockquote]:pr-4 [&_blockquote]:pl-4;
+  @apply max-w-article text-wrap mx-auto *:mb-4 *:last:mb-0 *:first:mt-0 [&_img]:my-10 [&_h1,h2,h3,h4,h5,h6]:mt-7.5 [&_code]:wrap-break-word [&_pre]:rounded-lg [&_pre]:px-2 [&_pre]:py-1 [&_ul]:list-disc [&_ul]:pl-6 [&_ol]:list-decimal [&_ol]:pl-6 [&_blockquote]:rounded-lg [&_blockquote]:border-l-4 [&_blockquote]:border-theme-dark [&_blockquote]:bg-theme-light [&_blockquote]:py-3 [&_blockquote]:pr-4 [&_blockquote]:pl-4;
 }

@@ -1,17 +1,19 @@
 ---
 title: "Audible for Business"
 excerpt: "Driving sales for Audible's new bulk purchasing program, while empowering authors to easily create or update content."
-role: "Technical lead"
+role: "Technical Lead"
 date: 2026-09-01
-stack: ["Next.js", "Headless CMS", "Salesforce Pardot"]
+stack: ["Next.js", "Headless CMS", "Salesforce Pardot", "GSAP"]
 hero:
   image: "../../src/images/work/audible-business-macbook-2000-80.webp"
   alt: "Laptop showing the Audible for Business website"
+demo:
+  url: https://www.audible.com/business
 theme: mango
 ---
 
-Dolor ipsum Lorem minim esse eiusmod occaecat in pariatur duis enim non aute cupidatat. Tempor sunt in quis velit sunt eu exercitation. Ad dolor eu sit labore minim reprehenderit nostrud nisi commodo. Nostrud enim incididunt consequat deserunt pariatur ullamco exercitation ad. Ut commodo ipsum velit aute dolor sit dolore consectetur. Velit veniam ea sint esse mollit sunt magna aliqua aliqua laborum esse voluptate. Nisi id quis in eiusmod exercitation proident in ad in ullamco culpa ipsum sunt sint id. Nulla ad ad esse pariatur.
+The Audible for Business team was looking for a way to advertise their new bulk audiobook purchasing service, targeted towards organizations looking to provide audiobooks to their employees. They needed a site to market this new offering, and demonstrate to prospective buyers how they can apply this tool to their workplaces.
 
-Aliqua laborum sint minim exercitation elit culpa sint est sint esse incididunt culpa. Anim ad cillum proident enim reprehenderit do sunt adipisicing aute anim laborum laboris pariatur. Fugiat qui culpa ipsum dolor qui. Nisi occaecat culpa sit ipsum duis adipisicing irure occaecat reprehenderit.
+Audible stakeholders were looking for a solution built on top of a headless content management system (CMS), to give authors freedom to quickly publish content without requiring any developer intervention. The CMS content was modeled with a "module" architecture, where our team built a set of page section modules that can be arranged in any order that the author needs. There is also a "resource" page template, which enables Audible business leaders to post blog-style content with suggested audiobooks and provide guides on how to lead book club discussions.
 
-Esse consequat fugiat consequat est. Excepteur excepteur eiusmod aliqua duis non sit est consectetur laboris esse magna dolor do veniam voluptate. Cupidatat dolor ipsum voluptate ea voluptate amet est deserunt magna mollit. Adipisicing laborum minim voluptate ad veniam non. Ullamco incididunt laborum consequat veniam occaecat in mollit sint nisi. Id eu cupidatat nostrud ad ipsum culpa eu fugiat cupidatat minim elit. Sit nulla nostrud Lorem proident voluptate proident adipisicing culpa.
+To bring in leads to their sales team, we integrated Salesforce Pardot forms on the page. Prospective clients can fill out these forms to quickly get connected to a sales rep, or unlock gated white papers on the site.
