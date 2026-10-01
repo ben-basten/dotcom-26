@@ -13,10 +13,16 @@ const menuId = "mobile-menu";
 
 const isOpen = ref(false);
 const toggle = ref<HTMLButtonElement | null>(null);
+const menuList = ref<HTMLUListElement | null>(null);
 
-watch(isOpen, (open) => {
-  document.documentElement.classList.toggle("overflow-hidden", open);
-});
+watch(
+  isOpen,
+  (open) => {
+    document.documentElement.classList.toggle("overflow-hidden", open);
+    if (open) menuList.value?.focus();
+  },
+  { flush: "post" },
+);
 
 function closeMenu() {
   isOpen.value = false;
@@ -96,7 +102,11 @@ onUnmounted(() => {
       class="menu-panel fixed inset-x-inset top-inset z-20 mx-auto flex max-h-[calc(100dvh-2*var(--spacing-inset))] max-w-max-width flex-col items-center overflow-y-auto rounded-xl bg-background px-6 pb-6 pt-23 shadow-lg min-[95rem]:inset-x-0"
       :class="{ 'is-open': isOpen, 'pointer-events-none': !isOpen }"
     >
-      <ul class="flex flex-col items-center gap-5 list-none">
+      <ul
+        ref="menuList"
+        tabindex="-1"
+        class="flex flex-col items-center gap-5 list-none outline-none"
+      >
         <li v-for="link in links" :key="link.href" class="flex items-center">
           <a
             :href="link.href"
