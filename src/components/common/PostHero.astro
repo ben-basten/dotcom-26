@@ -40,6 +40,7 @@ const { title, excerpt, subtext, image, imageAlt = "" } = Astro.props;
           class="relative bg-theme-light z-2 mt-10 mx-auto w-full max-w-250 aspect-3/2 object-cover rounded-lg"
           src={image}
           alt={imageAlt}
+          sizes="(min-width: 70rem) 62.5rem, 100vw"
           quality="high"
         />
       )
