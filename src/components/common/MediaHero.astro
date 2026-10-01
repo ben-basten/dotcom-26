@@ -16,13 +16,7 @@ const { title: heading, excerpt } = Astro.props;
     class="bg-theme relative h-180 max-h-[min(90dvh,720px)] w-full overflow-hidden rounded-xl"
   >
     <div
-      aria-hidden="true"
-      class="hero-icons absolute inset-0 text-red"
-      style={{ backgroundImage: `url(${iconsBackground})` }}
-    >
-    </div>
-    <div
-      class="absolute inset-x-0 bottom-0 flex flex-col gap-3 w-full bg-theme-dark py-6 ps-[calc(var(--spacing-side-mobile)-var(--spacing-inset))] md:ps-[calc(var(--spacing-side)-var(--spacing-inset))] min-[95rem]:ps-side pe-side-mobile md:pe-6 text-background md:top-2/3 md:-translate-y-1/2 md:bottom-auto md:w-3/5 md:rounded-tr-lg md:rounded-br-lg lg:w-2/5"
+      class="absolute z-1 inset-x-0 bottom-0 flex flex-col gap-3 w-full bg-theme-dark py-6 ps-[calc(var(--spacing-side-mobile)-var(--spacing-inset))] md:ps-[calc(var(--spacing-side)-var(--spacing-inset))] min-[95rem]:ps-side pe-side-mobile md:pe-6 text-background md:top-2/3 md:-translate-y-1/2 md:bottom-auto md:w-3/5 md:rounded-tr-lg md:rounded-br-lg lg:w-2/5"
     >
       <Heading as="h1">{heading}</Heading>
       {
@@ -35,6 +29,13 @@ const { title: heading, excerpt } = Astro.props;
         )
       }
     </div>
+    <div
+      role="img"
+      aria-label="Grid of icons, including coffee maker, keyboard, bike, camera, plant"
+      class="hero-icons absolute inset-0 text-red"
+      style={{ backgroundImage: `url(${iconsBackground})` }}
+    >
+    </div>
   </section>
 </ContentContainer>
 
@@ -44,5 +45,22 @@ const { title: heading, excerpt } = Astro.props;
     background-size: 15rem auto;
     background-position: -1.25rem -1.25rem;
     opacity: 0.15;
+    animation: hero-icons-fade-in 1s var(--ease-out) 150ms both;
+  }
+
+  @keyframes hero-icons-fade-in {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 0.15;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hero-icons {
+      animation: none;
+    }
   }
 </style>
