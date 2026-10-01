@@ -13,18 +13,16 @@ export const hastHeadingLinks = defineHastPlugin({
           : generateHeadingId(title);
 
       if (!node.properties.id) context.setProperty(node, "id", id);
-      context.setProperty(node, "class", "group");
 
-      context.appendChild(node, {
+      context.insertAfter(node, {
         type: "element",
         tagName: "a",
         properties: {
           href: `#${id}`,
           ariaLabel: `Link to section`,
-          ariaHidden: "true",
-          tabIndex: "-1",
+          ariaDescribedBy: [id],
           class:
-            "max-sm:hidden no-underline ml-[5px] text-foreground opacity-40 group-hover:opacity-100 transition-opacity ease-in-out duration-default",
+            "no-underline hover:underline text-2xl font-bold ml-[5px] text-foreground opacity-40 hover:opacity-100 transition-opacity ease-in-out duration-default",
         },
         children: [{ type: "text", value: "#" }],
       });
