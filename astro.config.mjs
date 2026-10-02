@@ -63,5 +63,6 @@ export default defineConfig({
     "/projects": "/work",
     "/projects/group-music-server": "/work",
     "/archives": "/posts",
+    "/posts/stop-for-the-sunrise": "/posts",
   },
 });
