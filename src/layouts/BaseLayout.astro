@@ -19,7 +19,14 @@ const { color = "pink", preloadHeroIcons = false } = Astro.props;
 <!doctype html>
 <html lang="en">
   <head>
-    <Font cssVariable="--font-asap" />
+    <Font
+      cssVariable="--font-asap"
+      preload={[
+        { weight: 400, style: "normal" },
+        { weight: 500, style: "normal" },
+        { weight: 800, style: "normal" },
+      ]}
+    />
     <meta charset="utf-8" />
     {
       preloadHeroIcons && (
