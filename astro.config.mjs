@@ -9,7 +9,7 @@ import { hastHeadingLinks } from "./src/hast/hast-heading-links";
 import vue from "@astrojs/vue";
 
 export default defineConfig({
-  site: process.env.DEPLOY_PRIME_URL,
+  site: process.env.SITE_URL,
   integrations: [sitemap(), mdx(), vue()],
   vite: {
     plugins: [tailwindcss()],
@@ -36,7 +36,7 @@ export default defineConfig({
   },
   env: {
     schema: {
-      DEPLOY_PRIME_URL: envField.string({
+      SITE_URL: envField.string({
         context: "server",
         access: "secret",
       }),
