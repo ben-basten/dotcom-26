@@ -3,17 +3,15 @@ import Footer from "~/components/navigation/Footer.astro";
 import MainNavigation from "~/components/navigation/MainNavigation.astro";
 import SkipLink from "~/components/navigation/SkipLink.astro";
 import { Font } from "astro:assets";
-import iconsBackground from "~/images/icons.svg?url";
 import "~/styles/main.css";
 import { COLOR_CLASS, type ThemeColor } from "~/utils/colors.constants";
 import { MAIN_ID } from "~/utils/copy.constants";
 
 interface Props {
   color?: ThemeColor;
-  preloadHeroIcons?: boolean;
 }
 
-const { color = "pink", preloadHeroIcons = false } = Astro.props;
+const { color = "pink" } = Astro.props;
 ---
 
 <!doctype html>
@@ -28,16 +26,6 @@ const { color = "pink", preloadHeroIcons = false } = Astro.props;
       ]}
     />
     <meta charset="utf-8" />
-    {
-      preloadHeroIcons && (
-        <link
-          rel="preload"
-          as="image"
-          href={iconsBackground}
-          type="image/svg+xml"
-        />
-      )
-    }
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />

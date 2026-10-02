@@ -11,7 +11,7 @@ const workEntries = (await getCollection("work")).sort(compareByDateDesc);
 const excerpt = "Recent projects and tinkering that I'm excited about.";
 ---
 
-<BaseLayout color="pink" preloadHeroIcons>
+<BaseLayout color="pink">
   <SEO slot="seo" title="Work" description={excerpt} />
   <MediaHero title="My work" {excerpt} />
   <ContentContainer as="section" class="mt-section-space">
