@@ -1,5 +1,6 @@
 import js from "@eslint/js";
 import eslintPluginAstro from "eslint-plugin-astro";
+import tseslint from "typescript-eslint";
 
 export default [
   {
@@ -13,4 +14,8 @@ export default [
       // override/add rules settings here
     },
   },
+  ...tseslint.configs.recommended.map((config) => ({
+    ...config,
+    files: ["**/*.{js,ts}"],
+  })),
 ];
