@@ -1,0 +1,199 @@
+<div
+  role="img"
+  aria-label="Grid of icons, including coffee maker, keyboard, bike, camera, plant"
+  class="icon-grid absolute inset-0"
+>
+  <canvas aria-hidden="true" class="icon-grid-canvas absolute inset-0"></canvas>
+</div>
+
+<style>
+  .icon-grid {
+    pointer-events: none;
+    opacity: 0.15;
+  }
+
+  .icon-grid-canvas {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 400ms ease-out;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .icon-grid-canvas {
+      transition: none;
+    }
+  }
+</style>
+
+<script>
+  interface Icon {
+    image: HTMLImageElement;
+    aspectRatio: number;
+  }
+
+  interface Cell {
+    x: number;
+    y: number;
+    icon: Icon;
+    hover: number;
+  }
+
+  const iconUrls = Object.entries(
+    import.meta.glob<string>("../../images/hero/*.svg", {
+      eager: true,
+      query: "?url",
+      import: "default",
+    }),
+  )
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, url]) => url);
+  let iconsPromise: Promise<Icon[]> | undefined;
+
+  function loadIcons(): Promise<Icon[]> {
+    return (iconsPromise ??= Promise.all(
+      iconUrls.map(async (url) => {
+        const image = new Image();
+        image.src = url;
+        await image.decode();
+        return {
+          image,
+          aspectRatio: image.naturalWidth / image.naturalHeight,
+        };
+      }),
+    ));
+  }
+
+  for (const canvas of document.querySelectorAll<HTMLCanvasElement>(
+    ".icon-grid-canvas",
+  )) {
+    const hero = canvas.closest("section");
+    const context = canvas.getContext("2d");
+    if (!hero || !context) continue;
+    const drawingContext = context;
+
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pointer = { x: Infinity, y: Infinity };
+    let icons: Icon[] = [];
+    let cells: Cell[] = [];
+    let width = 0;
+    let height = 0;
+    let visible = false;
+    let loading = false;
+    let frame = 0;
+    let lastFrame = 0;
+
+    function resize() {
+      if (!icons.length) return;
+      const bounds = canvas.getBoundingClientRect();
+      width = bounds.width;
+      height = bounds.height;
+      if (!width || !height) return;
+
+      const pixelRatio = Math.min(window.devicePixelRatio || 1, 2);
+      canvas.width = Math.round(width * pixelRatio);
+      canvas.height = Math.round(height * pixelRatio);
+      drawingContext.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
+
+      const spacing = width < 600 ? 64 : 76;
+      const inset = spacing * 0.025;
+      const columns = Math.ceil(width / spacing) + 2;
+      const rows = Math.ceil(height / spacing) + 2;
+      cells = Array.from({ length: columns * rows }, (_, index) => {
+        const column = index % columns;
+        const row = Math.floor(index / columns);
+        return {
+          x: column * spacing + inset,
+          y: row * spacing + inset,
+          icon: icons[(column * 37 + row * 17) % icons.length],
+          hover: 0,
+        };
+      });
+      draw();
+    }
+
+    function draw() {
+      drawingContext.clearRect(0, 0, width, height);
+      for (const cell of cells) {
+        const distance = Math.hypot(cell.x - pointer.x, cell.y - pointer.y);
+        const influence = motion.matches ? 0 : Math.max(0, 1 - distance / 220);
+        cell.hover += (influence - cell.hover) * 0.2;
+        const scale = 1 + cell.hover * 0.65;
+        const iconWidth = Math.min(43 * cell.icon.aspectRatio, 60) * scale;
+        const iconHeight = iconWidth / cell.icon.aspectRatio;
+        drawingContext.drawImage(
+          cell.icon.image,
+          cell.x - iconWidth / 2,
+          cell.y - iconHeight / 2,
+          iconWidth,
+          iconHeight,
+        );
+      }
+    }
+
+    function tick(time: number) {
+      frame = requestAnimationFrame(tick);
+      if (time - lastFrame < 1000 / 30) return;
+      lastFrame = time;
+      draw();
+    }
+
+    function updateAnimation() {
+      cancelAnimationFrame(frame);
+      if (!visible || document.hidden) return;
+      if (!icons.length) {
+        if (loading) return;
+        loading = true;
+        void loadIcons()
+          .then((loaded) => {
+            icons = loaded;
+            resize();
+            updateAnimation();
+          })
+          .catch(() => {
+            loading = false;
+          });
+        return;
+      }
+      if (motion.matches) {
+        for (const cell of cells) cell.hover = 0;
+        draw();
+      }
+      canvas.style.opacity = "1";
+      if (!motion.matches) frame = requestAnimationFrame(tick);
+    }
+
+    function movePointer(clientX: number, clientY: number) {
+      const bounds = canvas.getBoundingClientRect();
+      pointer.x = clientX - bounds.left;
+      pointer.y = clientY - bounds.top;
+    }
+
+    function clearPointer() {
+      pointer.x = pointer.y = Infinity;
+    }
+
+    hero.addEventListener("pointermove", (event) => {
+      if (event.pointerType !== "touch") {
+        movePointer(event.clientX, event.clientY);
+      }
+    });
+    hero.addEventListener("pointerleave", clearPointer);
+    const moveTouch = (event: TouchEvent) => {
+      const touch = event.touches[0];
+      if (touch) movePointer(touch.clientX, touch.clientY);
+    };
+    hero.addEventListener("touchstart", moveTouch, { passive: true });
+    hero.addEventListener("touchmove", moveTouch, { passive: true });
+    hero.addEventListener("touchend", clearPointer);
+    hero.addEventListener("touchcancel", clearPointer);
+
+    new ResizeObserver(resize).observe(canvas);
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      updateAnimation();
+    }).observe(hero);
+    document.addEventListener("visibilitychange", updateAnimation);
+    motion.addEventListener("change", updateAnimation);
+  }
+</script>

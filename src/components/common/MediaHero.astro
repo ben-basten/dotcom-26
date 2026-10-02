@@ -1,7 +1,7 @@
 ---
 import ContentContainer from "~/components/base/ContentContainer.astro";
 import Heading from "~/components/base/Heading.astro";
-import iconsBackground from "~/images/icons.svg?url";
+import IconGrid from "~/components/common/IconGrid.astro";
 
 interface Props {
   title: string;
@@ -29,38 +29,6 @@ const { title: heading, excerpt } = Astro.props;
         )
       }
     </div>
-    <div
-      role="img"
-      aria-label="Grid of icons, including coffee maker, keyboard, bike, camera, plant"
-      class="hero-icons absolute inset-0 text-red"
-      style={{ backgroundImage: `url(${iconsBackground})` }}
-    >
-    </div>
+    <IconGrid />
   </section>
 </ContentContainer>
-
-<style>
-  .hero-icons {
-    background-repeat: repeat;
-    background-size: 15rem auto;
-    background-position: -1.25rem -1.25rem;
-    opacity: 0.15;
-    animation: hero-icons-fade-in 1s var(--ease-out) 150ms both;
-  }
-
-  @keyframes hero-icons-fade-in {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 0.15;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hero-icons {
-      animation: none;
-    }
-  }
-</style>
