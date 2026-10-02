@@ -11,6 +11,19 @@
   animation-duration: 150ms;
 }
 
+.media-hero {
+  view-transition-name: media-hero;
+}
+
+::view-transition-group(media-hero),
+::view-transition-new(media-hero) {
+  animation: none;
+}
+
+::view-transition-old(media-hero) {
+  display: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   ::view-transition-old(root),
   ::view-transition-new(root) {
