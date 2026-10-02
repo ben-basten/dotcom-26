@@ -40,10 +40,8 @@ function closeOnDesktop(event: MediaQueryListEvent) {
 function closeOnFocusOut(event: FocusEvent) {
   if (
     isOpen.value &&
-    !(
-      event.relatedTarget instanceof Node &&
-      navigation?.contains(event.relatedTarget)
-    )
+    event.relatedTarget instanceof Node &&
+    !navigation?.contains(event.relatedTarget)
   ) {
     isOpen.value = false;
   }
