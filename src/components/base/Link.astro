@@ -18,5 +18,5 @@ const { class: className, href, newTab = false } = Astro.props;
   class={className}
 >
   <slot />
-  <ExternalIcon class="ms-1 inline-block align-baseline" />
+  {newTab && <ExternalIcon class="ms-1 inline-block align-baseline" />}
 </a>
