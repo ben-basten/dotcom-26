@@ -1,5 +1,5 @@
 ---
-title: "Switching Between Java Versions"
+title: "Switching between Java versions"
 date: 2022-02-16T21:47:54-05:00
 excerpt: "How to quickly change Java versions in a Unix terminal environment, to make working with numerous Java apps easier."
 ---

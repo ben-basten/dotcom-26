@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Home Assistant"
+title: "Getting started with Home Assistant"
 date: 2022-11-15T18:20:36-05:00
 excerpt: "Taking control of my privacy and smart home devices by hosting container-based Home Assistant."
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Setting Up Zigbee With Home Assistant"
+title: "Setting up Zigbee with Home Assistant"
 date: 2022-11-22T22:01:08-05:00
 excerpt: "Expanding my home automation with a network of Zigbee devices."
 ---

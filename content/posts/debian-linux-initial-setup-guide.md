@@ -1,5 +1,5 @@
 ---
-title: "Debian Linux Initial Setup Guide"
+title: "Debian Linux initial setup guide"
 date: 2023-11-12T16:48:29-05:00
 excerpt: "My new Linux machine configuration, as of November 2023."
 ---

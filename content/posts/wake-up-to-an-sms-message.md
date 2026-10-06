@@ -1,5 +1,5 @@
 ---
-title: "Wake Up to an SMS Message"
+title: "Wake up to an SMS message"
 date: 2024-02-18T20:05:35-05:00
 excerpt: "Using Home Assistant automation to guarantee that I wake up when I'm on call."
 ---

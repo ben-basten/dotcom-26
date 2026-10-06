@@ -1,5 +1,5 @@
 ---
-title: "How to Host Home Assistant in a TrueNAS Scale VM"
+title: "How to host Home Assistant in a TrueNAS Scale VM"
 date: 2024-10-14T19:10:49-04:00
 excerpt: "Unlocking the full capabilities of Home Assistant Operating System using a TrueNAS virtual machine."
 ---

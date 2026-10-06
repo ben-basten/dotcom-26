@@ -1,5 +1,5 @@
 ---
-title: "Building Frontend with Right-to-Left Support"
+title: "Building frontend with right-to-left support"
 date: 2026-07-07T20:02:13-04:00
 excerpt: "Using web standards and TailwindCSS tooling to build intuitive websites for right-to-left languages."
 ---
