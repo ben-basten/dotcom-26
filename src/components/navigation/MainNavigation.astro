@@ -5,10 +5,12 @@ import Logo from "./Logo.astro";
 import MobileNav from "./MobileNav.vue";
 import type { NavLink } from "~/types/NavLink";
 import { normalizePathname } from "~/utils/url.helpers";
+import { GITHUB_URL } from "astro:env/client";
 
 const links: NavLink[] = [
   { text: "Work", href: "/work" },
   { text: "Blog", href: "/posts" },
+  ...(GITHUB_URL ? [{ text: "GitHub", href: GITHUB_URL, external: true }] : []),
 ];
 const ctaLink: NavLink = { text: "About", href: "/about" };
 

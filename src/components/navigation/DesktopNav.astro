@@ -1,5 +1,6 @@
 ---
 import Button from "~/components/base/Button.vue";
+import ExternalIcon from "~/components/svg/ExternalIcon.astro";
 import type { NavLink } from "~/types/NavLink";
 import { normalizePathname } from "~/utils/url.helpers";
 
@@ -21,12 +22,18 @@ const currentPath = normalizePathname(Astro.url.pathname);
         <a
           href={link.href}
           aria-current={currentPath === link.href ? "page" : undefined}
+          target={link.external ? "_blank" : undefined}
+          rel={link.external ? "noopener noreferrer" : undefined}
+          aria-description={link.external ? "Opens in new tab" : undefined}
           class:list={[
             "relative text-xl no-underline font-semibold hover:z-5 hover:nav-active active:nav-active hover:bg-theme-light motion-safe:transition-[rotate,scale,background-color] duration-default ease-snap",
             "bg-background px-5 py-2 rounded-lg border-3 border-theme-dark nav-current",
           ]}
         >
           {link.text}
+          {link.external && (
+            <ExternalIcon class="ms-1 inline-block align-baseline" />
+          )}
         </a>
       </li>
     ))

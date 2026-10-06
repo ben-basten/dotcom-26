@@ -123,9 +123,30 @@ onUnmounted(() => {
           <a
             :href="link.href"
             :aria-current="currentPath === link.href ? 'page' : undefined"
+            :target="link.external ? '_blank' : undefined"
+            :rel="link.external ? 'noopener noreferrer' : undefined"
+            :aria-description="link.external ? 'Opens in new tab' : undefined"
             class="text-4xl nav-current motion-safe:transition-[rotate,scale,color] duration-default ease-snap no-underline font-bold text-foreground hover:nav-active hover:text-theme-dark aria-[current=page]:nav-active aria-[current=page]:underline"
           >
             {{ link.text }}
+            <svg
+              v-if="link.external"
+              xmlns="http://www.w3.org/2000/svg"
+              width="18"
+              height="18"
+              fill="none"
+              viewBox="0 0 6 6"
+              aria-hidden="true"
+              focusable="false"
+              class="ms-1 inline-block align-baseline"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M.5.5v5h5M2.5 3.5l3-3m-2 0h2v2M5.5 5.5V4M.5.5H2"
+              />
+            </svg>
           </a>
         </li>
         <li class="mt-5">
