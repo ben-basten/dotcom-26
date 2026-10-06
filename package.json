@@ -38,7 +38,8 @@
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-organize-imports": "^4.3.0",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.71.0"
+    "typescript-eslint": "^8.71.0",
+    "vue-tsc": "^3.3.12"
   },
   "nano-staged": {
     "*.{js,mjs,jsx,ts,tsx,astro}": [

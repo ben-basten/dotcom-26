@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { computed } from "vue";
+import { computed, defineProps } from "vue";
 
 const { href, size = "md" } = defineProps<{
   href: string;
