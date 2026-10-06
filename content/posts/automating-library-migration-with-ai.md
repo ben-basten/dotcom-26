@@ -1,6 +1,6 @@
 ---
 title: "Automating a styling library migration with AI"
-date: 2026-10-06
+date: 2026-10-06T15:43:48Z
 excerpt: "How I migrated a Next.js application from using the Stitches CSS-in-JS styling library to TailwindCSS, using AI automation to help."
 ---
 
