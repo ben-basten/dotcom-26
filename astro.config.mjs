@@ -1,5 +1,4 @@
 import { satteri } from "@astrojs/markdown-satteri";
-import mdx from "@astrojs/mdx";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, envField, fontProviders } from "astro/config";
@@ -10,7 +9,7 @@ import vue from "@astrojs/vue";
 
 export default defineConfig({
   site: process.env.SITE_URL,
-  integrations: [sitemap(), mdx(), vue()],
+  integrations: [sitemap(), vue()],
   vite: {
     plugins: [tailwindcss()],
   },

@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@astrojs/markdown-satteri": "^0.4.2",
-    "@astrojs/mdx": "^7.0.8",
     "@astrojs/rss": "^4.0.19",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/vue": "^7.0.3",
