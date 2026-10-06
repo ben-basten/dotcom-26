@@ -23,7 +23,7 @@ As I was planning out this work, I had a couple of constraints to keep in mind:
 - PRs must be split into chunks of reasonable size to make them reviewable by teammates and AI code review
 - I wanted work to be split into logical commits to make it easier to use Git bisect to find the problem if I ran into a styling issue mid-migration
 - I was working at a small agency with a limited AI token budget, so I needed to balance quality output with token cost
-- Output CSS should be *exactly* the same - my job was not to fix the mistakes of developers past
+- Output CSS should be _exactly_ the same - my job was not to fix the mistakes of developers past
 - Pages needed to be nearly pixel perfect matches to prevent any disruptions for stakeholders
 - There are no pre-existing tests in the project
 
@@ -46,18 +46,18 @@ My first thought here was to hook up the [Google Chrome MCP](https://developer.c
 What I settled on instead was Playwright snapshot testing. For each unique route that I wanted test coverage for, I wrote a simple test that would load the route with reduced motion on, scroll all the way down the page to trigger any scroll-driven animations, then do a full page snapshot comparison. I generated the initial snapshots from the existing production code as a gold standard baseline.
 
 ```ts
-import { expect, test } from '@playwright/test';
-import { prepareForSnapshot } from './helpers/prepare-for-snapshot';
+import { expect, test } from "@playwright/test";
+import { prepareForSnapshot } from "./helpers/prepare-for-snapshot";
 
-test.describe('My Page', () => {
-  test('should match expected screenshot', async ({ page }) => {
-    await page.emulateMedia({ reducedMotion: 'reduce' });
-    await page.goto('/path/to/page');
+test.describe("My Page", () => {
+  test("should match expected screenshot", async ({ page }) => {
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/path/to/page");
     // scroll down the page to trigger any animations
     await prepareForSnapshot(page);
     expect(
-      await page.screenshot({ fullPage: true, scale: 'css' })
-    ).toMatchSnapshot('my-page.png');
+      await page.screenshot({ fullPage: true, scale: "css" }),
+    ).toMatchSnapshot("my-page.png");
   });
 });
 ```

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted, onUnmounted, ref, watch } from "vue";
+import { defineProps, onMounted, onUnmounted, ref, watch } from "vue";
 import Button from "~/components/base/Button.vue";
 import type { NavLink } from "~/types/NavLink";
 
