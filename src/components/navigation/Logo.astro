@@ -1,13 +1,6 @@
----
-interface Props {
-  expanded?: boolean;
-}
-
-const { expanded = true } = Astro.props;
----
-
 <a
   href="/"
+  data-scroll-logo
   aria-current={Astro.url.pathname === "/" ? "page" : undefined}
   class:list={[
     "pointer-events-auto relative max-md:ms-2 isolate z-30 no-underline font-bold rounded-lg text-3xl xl:text-5xl text-foreground",
@@ -18,11 +11,29 @@ const { expanded = true } = Astro.props;
 >
   <span class="relative z-5">
     B
-    <span class:list={["logo-rest", { hidden: !expanded }]}>en </span>
+    <span class="logo-rest">en </span>
     B
-    <span class:list={["logo-rest", { hidden: !expanded }]}>asten</span>
+    <span class="logo-rest">asten</span>
   </span>
 </a>
+
+<script>
+  const logo = document.querySelector("[data-scroll-logo]");
+  const rest = logo?.querySelectorAll(".logo-rest");
+  let previousScrollY = Math.max(0, window.scrollY);
+
+  const updateLogo = () => {
+    const scrollY = Math.max(0, window.scrollY);
+    if (scrollY === 0 || scrollY !== previousScrollY) {
+      const collapsed = scrollY > 0 && scrollY > previousScrollY;
+      rest?.forEach((span) => span.classList.toggle("hidden", collapsed));
+    }
+    previousScrollY = scrollY;
+  };
+
+  updateLogo();
+  window.addEventListener("scroll", updateLogo, { passive: true });
+</script>
 
 <style>
   :global(nav[data-mobile-menu-open]) .logo-rest {
