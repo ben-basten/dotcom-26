@@ -7,10 +7,10 @@ import type { NavLink } from "~/types/NavLink";
 import { normalizePathname } from "~/utils/url.helpers";
 
 const links: NavLink[] = [
-  { text: "Work", href: "/work" },
-  { text: "Blog", href: "/posts" },
+  { text: "Work", href: "/work/" },
+  { text: "Blog", href: "/posts/" },
 ];
-const ctaLink: NavLink = { text: "About", href: "/about" };
+const ctaLink: NavLink = { text: "About", href: "/about/" };
 
 const currentPath = normalizePathname(Astro.url.pathname);
 ---

@@ -29,12 +29,12 @@ const recentPosts = (await getCollection("posts"))
     <section class="max-w-200 w-full">
       <Heading as="h2" class="mb-8">Recent posts</Heading>
       <BlogPostList posts={recentPosts} />
-      <ArrowLink href="/posts" class="mt-7.5">View all posts</ArrowLink>
+      <ArrowLink href="/posts/" class="mt-7.5">View all posts</ArrowLink>
     </section>
     <section class="max-w-200">
       <Heading as="h2" class="mb-8">Featured work</Heading>
       <WorkGrid entries={featuredWork} headingLevel="h3" />
-      <ArrowLink href="/work" class="mt-7.5 mx-auto">View all work</ArrowLink>
+      <ArrowLink href="/work/" class="mt-7.5 mx-auto">View all work</ArrowLink>
     </section>
   </ContentContainer>
 </BaseLayout>

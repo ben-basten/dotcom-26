@@ -58,6 +58,7 @@ export default defineConfig({
       REPOSITORY_URL: envField.string({ context: "client", access: "public" }),
     },
   },
+  trailingSlash: "always",
   redirects: {
     "/projects": "/work",
     "/projects/group-music-server": "/work",
