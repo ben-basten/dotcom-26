@@ -1,1 +1,5 @@
 /sitemap.xml /sitemap-index.xml 301
+/technologies /work/ 301
+/technologies/* /work/ 301
+/tags /posts/ 301
+/tags/* /posts/ 301
