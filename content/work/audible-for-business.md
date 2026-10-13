@@ -7,8 +7,7 @@ stack: ["Next.js", "Headless CMS", "Salesforce Pardot", "GSAP"]
 hero:
   image: "../../src/images/work/audible-business-macbook-2000-80.webp"
   alt: "Laptop showing the Audible for Business website"
-demo:
-  url: https://www.audible.com/business
+demoUrl: https://www.audible.com/business
 theme: mango
 ---
 
