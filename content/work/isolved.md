@@ -8,8 +8,7 @@ stack:
 hero:
   image: "../../src/images/work/isolved-macbook-2000-85.webp"
   alt: "Laptop showing the isolved website"
-demo:
-  url: https://www.isolvedhcm.com/
+demoUrl: https://www.isolvedhcm.com/
 theme: pink
 ---
 

@@ -7,6 +7,7 @@ stack: ["Nuxt", "Contentful CMS", "Postgres", "Drizzle"]
 hero:
   image: "../../src/images/work/wedding-2000-85.webp"
   alt: "Laptop showing the wedding website"
+repositoryUrl: https://github.com/ben-basten/bs-said-yes
 theme: pink
 ---
 

@@ -7,6 +7,7 @@ import PostHero from "~/components/common/PostHero.astro";
 import SEO from "~/components/base/SEO.astro";
 import Technologies from "~/components/work/Technologies.astro";
 import Link from "~/components/base/Link.astro";
+import type { NavLink } from "~/types/NavLink";
 
 export async function getStaticPaths() {
   const workEntries = await getCollection("work");
@@ -29,6 +30,14 @@ const ogImage = work.data.hero
       quality: "low",
     })
   : undefined;
+
+const links: NavLink[] = [];
+if (work.data.demoUrl) {
+  links.push({ href: work.data.demoUrl, text: "Visit site" });
+}
+if (work.data.repositoryUrl) {
+  links.push({ href: work.data.repositoryUrl, text: "View the code" });
+}
 ---
 
 <BaseLayout color={work.data.theme ?? "pink"}>
@@ -51,13 +60,13 @@ const ogImage = work.data.hero
       <div class="markdown-content mt-section-space">
         <Content />
         {
-          work.data.demo && (
+          links.map((link) => (
             <div class="mt-6 text-lg">
-              <Link href={work.data.demo.url} newTab>
-                Visit site
+              <Link href={link.href} newTab>
+                {link.text}
               </Link>
             </div>
-          )
+          ))
         }
       </div>
     </ContentContainer>

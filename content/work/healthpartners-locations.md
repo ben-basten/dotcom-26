@@ -7,8 +7,7 @@ stack: ["Nuxt", "Mapbox", "Stencil.js"]
 hero:
   image: "../../src/images/work/healthpartners-2000-85.webp"
   alt: "Laptop showing the HealthPartners website"
-demo:
-  url: https://www.healthpartners.com/care/find/locations/
+demoUrl: https://www.healthpartners.com/care/find/locations/
 theme: blue
 ---
 
