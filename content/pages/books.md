@@ -6,6 +6,10 @@ theme: blue
 
 ## 2026
 
+### October
+
+- Threshing Day (Rebecca Yarros)
+
 ### September
 
 - The Hobbit (J. R. R. Tolkien)
