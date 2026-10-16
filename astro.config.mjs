@@ -55,7 +55,6 @@ export default defineConfig({
         optional: true,
       }),
       COMMIT_REF: envField.string({ context: "client", access: "public" }),
-      REPOSITORY_URL: envField.string({ context: "client", access: "public" }),
     },
   },
   trailingSlash: "always",
